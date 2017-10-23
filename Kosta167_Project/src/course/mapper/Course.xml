@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="course.mapper.CourseMapper">
+   <cache />
+   
+   <select id="startList" resultType="String">
+   		select ss_name from STOPSTATION
+			group by ss_name
+				order by ss_name
+   </select>
+   
+   <select id="availableStart" parameterType="String" resultType="Stopstation">
+   		select * from STOPSTATION
+   			where ss_name = #{ss_name}
+   </select>
+   
+    <select id="availableEnd" parameterType="Stopstation" resultType="Stopstation">
+   		select * from STOPSTATION
+   			where line_id=#{line_id} and ss_id>#{ss_id}
+   </select>
+   
+   <select id="availableTrain" parameterType="java.util.HashMap" resultType="Traintime">
+   		select t.* from traintime t, stopstation s
+  			where t.ss_id = s.ss_id
+				and s.line_id =#{line_id}
+    			and s.ss_id IN (select ss_id from STOPSTATION where ss_name = #{ss_name})
+    			and tt_stime between #{before} and #{after}
+   </select>
+</mapper>
