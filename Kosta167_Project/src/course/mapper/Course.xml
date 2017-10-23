@@ -22,7 +22,7 @@
 
 	<insert id="insertCourse" parameterType="Course">
 		insert into course
-		values (#{m_id},#{c_id})
+		values (#{c_id},#{m_id})
 	</insert>
 	
 	<insert id="insertCourseDetail" parameterType="CourseDetail">

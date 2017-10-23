@@ -129,12 +129,21 @@ $(function() {
 			var date = $('#startDate option:selected').val();
 			var startTime = $('#possibleTime option:selected').val(); 
 			
-			$('#storeLine').append('<input type="text" value="'+ date + " " + startTime + " " + startStation + " " + arriveStation +'" name="storeLine'+ lineCnt +'">');
+			$('#storeLine').append('<input type="text" value="'+ date + " " + startTime + " " + startStation + " " + arriveStation +'" name="storeLine'+ lineCnt +'">'
+					+'<span class = "'+ lineCnt +'"> <img src="../../images/course_images/x.png"></span> '); //경로 일부 삭제를 위해 span 추가
 			
 			$('#lineCnt').attr('value',lineCnt); // val("값 입력") 은 input type="text"만 가능한듯 "hidden" 은 옆과 같이 실행한다
 			lineCnt++; //
 		});
 		
+		//경로 일부 삭제를 위해 span에 이벤트 걸기
+		
+		$('#storeLine').on('click', 'span', function(){
+			var num = $(this).attr('class');
+			$(this).prev().remove();
+			$(this).detach();
+			
+		})
 
 		// 발권역 정보보기 로직
 		$('#issueinfo').click(

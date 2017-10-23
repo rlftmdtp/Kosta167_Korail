@@ -23,6 +23,7 @@
 		
 		if (member.getM_id().equals(request.getParameter("id"))
 				&& member.getM_pw().equals(request.getParameter("pass"))) {
+
 			session.setAttribute("name", member.getM_name());
 			session.setAttribute("m_id", member.getM_id());
 			response.sendRedirect("course.jsp");
