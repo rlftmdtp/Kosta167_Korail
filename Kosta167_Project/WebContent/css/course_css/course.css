@@ -1,5 +1,12 @@
 @CHARSET "UTF-8";
-#storeLine{
-	width: 300px;
-	height: 200px;
+
+#selectCourseForm{
+	border-right : 1px solid ;
+	padding:20px; /*위아래좌우여백주기*/
+	text-align: center;
+}
+
+#arrow{
+	width: 25px;
+	height: 18px;
 }
