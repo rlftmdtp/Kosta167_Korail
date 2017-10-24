@@ -117,41 +117,46 @@
 			List<String> str = new ArrayList<String>();
 			String[] splitStr = new String[6];
 			for(int i=0; i<=lineCnt; i++){
+				
 				System.out.println(request.getParameter("storeLine"+i));
 				str.add(i, request.getParameter("storeLine"+i));
 				System.out.println(str.get(i));
 
 				
 				// 0:출발날짜 1:tr_id 2:출발시간 3:ss_id 4:출발역 5:도착역
-				splitStr = str.get(0).split(" ");
-				splitStr[1] = splitStr[1].replace("(","");
-				splitStr[1] = splitStr[1].replace(")","");
-				System.out.println("splitStr[1]" + splitStr[1]);
-				System.out.println("splitStr[3]" + splitStr[3]);
+			
+					splitStr = str.get(0).split(" ");
+					splitStr[1] = splitStr[1].replace("(","");
+					splitStr[1] = splitStr[1].replace(")","");
+					System.out.println("splitStr[1]" + splitStr[1]);
+					System.out.println("splitStr[3]" + splitStr[3]);
+					
+					// traintime테이블의 tt_id를 구해오기 위해 
+					String tt_id = service.select_tt_id(splitStr[1],splitStr[3]);
+					
+					// 데이트 객체로 변환
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:ss");
+					Date date = format.parse(splitStr[0] + " " +splitStr[2]);
+					//System.out.println(date);
+					
+					CourseDetail courseDetail = new CourseDetail();
+					courseDetail.setC_id(c_id+"");
+					courseDetail.setTt_id(tt_id);
+					courseDetail.setCd_start(splitStr[4]);
+					courseDetail.setCd_stime(date);
+					courseDetail.setCd_end(splitStr[5]);
+					courseDetail.setCd_etime(new Date());
+					
+					int re = service.insertCourseDetail(courseDetail);
+					if(re >0){
+						System.out.println("코스 세부저장을 완료했습니다");
+					}
+					else{
+						System.out.println("실패");
+					}
+					
 				
-				// traintime테이블의 tt_id를 구해오기 위해 
-				String tt_id = service.select_tt_id(splitStr[1],splitStr[3]);
 				
-				// 데이트 객체로 변환
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:ss");
-				Date date = format.parse(splitStr[0] + " " +splitStr[2]);
-				//System.out.println(date);
-				
-				CourseDetail courseDetail = new CourseDetail();
-				courseDetail.setC_id(c_id+"");
-				courseDetail.setTt_id(tt_id);
-				courseDetail.setCd_start(splitStr[4]);
-				courseDetail.setCd_stime(date);
-				courseDetail.setCd_end(splitStr[5]);
-				courseDetail.setCd_etime(new Date());
-				
-				int re = service.insertCourseDetail(courseDetail);
-				if(re >0){
-					System.out.println("코스 세부저장을 완료했습니다");
-				}
-				else{
-					System.out.println("실패");
-				}
 			}
 			
 			response.sendRedirect("course.jsp");
