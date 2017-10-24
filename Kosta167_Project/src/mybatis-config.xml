@@ -5,6 +5,7 @@
 
 <configuration>
 	<typeAliases>
+<<<<<<< HEAD
 		<!-- 별칭 설정 설정 -->
 		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
 		<typeAlias type="course.model.Member" alias="Member" />
@@ -28,4 +29,22 @@
 		<mapper resource="course/mapper/Course.xml" />
 	</mappers>
 
+=======
+		<typeAlias type="partner.model.Member" alias="Member"/>
+	</typeAliases>
+	
+	<environments default="development">
+      <environment id="development">
+         <transactionManager type="JDBC"/>
+         <dataSource type="JNDI">
+            <property name="data_source" value="java:comp/env/jdbc/oracle"/>
+         </dataSource>
+      </environment>      
+   </environments>
+	
+	<mappers>
+		<mapper resource="partner/mapper/Partner.xml"/>
+	</mappers>
+	
+>>>>>>> refs/remotes/origin/Jangheejung
 </configuration>
