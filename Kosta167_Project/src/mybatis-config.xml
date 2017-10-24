@@ -5,7 +5,6 @@
 
 <configuration>
 	<typeAliases>
-<<<<<<< HEAD
 		<!-- 별칭 설정 설정 -->
 		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
 		<typeAlias type="course.model.Member" alias="Member" />
@@ -29,7 +28,14 @@
 		<mapper resource="course/mapper/Course.xml" />
 	</mappers>
 
-=======
+</configuration>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
 		<typeAlias type="partner.model.Member" alias="Member"/>
 	</typeAliases>
 	
@@ -46,5 +52,4 @@
 		<mapper resource="partner/mapper/Partner.xml"/>
 	</mappers>
 	
->>>>>>> refs/remotes/origin/Jangheejung
 </configuration>
