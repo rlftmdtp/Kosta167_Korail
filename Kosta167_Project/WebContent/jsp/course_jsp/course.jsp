@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	// 출발역 리스트를 가져오는 윤주누나 코드
@@ -17,6 +18,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <!-- 달력 UI 적용 -->
@@ -32,11 +34,13 @@
 <div class="body-Wrap">
 <div id = "courseWrap">
 	<!-- 
+
 	<form action="course_Login.jsp" method="post">
 	로그인
 	<input type="text" name="id">
 	<input type="text" name="pass">
 	<input type="submit" value="로그인">
+
 	이름<input type="text" value="<%=session.getAttribute("name")%>" id="name" disabled="disabled">
 	아이디<input type="text" value="<%=session.getAttribute("m_id")%>" id="m_id" disabled="disabled">
 	</form>

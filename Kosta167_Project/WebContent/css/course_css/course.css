@@ -1,3 +1,10 @@
+
+@CHARSET "UTF-8";
+#storeLine{
+	width: 300px;
+	height: 200px;
+}
+=======
 @CHARSET "UTF-8";
 
 
@@ -122,4 +129,5 @@ body{margin:0;}
 	width: 25px;
 	height: 18px;
 }
+
 
