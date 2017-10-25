@@ -33,4 +33,6 @@ public interface ShareMapper {
 	public int insertReply(ShareReply sharereply);
 	
 	public List<ShareReply> listshareReply(int sh_no);
+	
+	public int deleteReply (int sh_no);
 }

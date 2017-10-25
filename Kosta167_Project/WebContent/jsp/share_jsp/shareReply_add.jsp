@@ -1,3 +1,4 @@
+<%@page import="share.model.Share"%>
 <%@page import="share.model.ShareService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,7 +12,10 @@
     <%
     	ShareService service = ShareService.getInstance();
     
-		    
+		
+    	int sh_no= Integer.parseInt(request.getParameter("sh_no"));
+		Share share = service.selectShareService(sh_no,false);
+		
    	 	int re = service.insertReplyService(sharereply);
    	 	out.println(re);
     	if(re > 0){

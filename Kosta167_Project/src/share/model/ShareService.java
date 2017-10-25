@@ -81,8 +81,11 @@ public class ShareService {
 		return new ListModel(list, requestPage, totalPageCount, startPage, endPage);
 	}
 	
-	public Share selectShareService(int sh_no){
-		dao.updateShareHit(sh_no);
+	public Share selectShareService(int sh_no, boolean bool){
+		if(bool){
+			dao.updateShareHit(sh_no);	
+		}
+		
 		return dao.selectShare(sh_no);
 	}
 	

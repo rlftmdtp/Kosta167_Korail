@@ -6,38 +6,40 @@
 <configuration>
 	<typeAliases>
 
-    <typeAlias type="review.model.Review" alias="Review"/>
-		<typeAlias type="review.model.Search" alias = "Re_Search"/>
-		<typeAlias type="review.model.Reply" alias = "Reply"/>
-  
+		<typeAlias type="review.model.Review" alias="Review" />
+		<typeAlias type="review.model.Search" alias="Re_Search" />
+		<typeAlias type="review.model.Reply" alias="Reply" />
 		<typeAlias type="message.model.Message" alias="Message" />
 		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
 		<typeAlias type="course.model.Course" alias="Course" />
+
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
 		<typeAlias alias="Stopstation" type="course.model.Stopstation" />
 		<typeAlias alias="Traintime" type="course.model.Traintime" />
 		<typeAlias alias="Message" type="message.model.Message" />
+
+		<typeAlias type="share.model.ShareSearch" alias="ShareSearch" />
+		<typeAlias type="share.model.ShareReply" alias="ShareReply" />
 	</typeAliases>
 
-		<environments default="development">
-			<environment id="development">
-				<transactionManager type="JDBC" />
-				<!-- Tomcat서버에 존재하는 커넥션 풀과 연결 -->
-				<dataSource type="JNDI">
-					<property name="data_source" value="java:comp/env/jdbc/oracle" />
-				</dataSource>
-			</environment>
-		</environments>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- Tomcat서버에 존재하는 커넥션 풀과 연결 -->
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/oracle" />
+			</dataSource>
+		</environment>
+	</environments>
 
-		<mappers>
-			<mapper resource="message/mapper/Message.xml" />
-			<mapper resource="partner/mapper/Partner.xml" />
-			<mapper resource="course/mapper/Course.xml" />
-			<mapper resource="main/mapper/Main.xml" />
-		</mappers>
-		
-	
-  	
+	<mappers>
+		<mapper resource="message/mapper/Message.xml" />
+		<mapper resource="partner/mapper/Partner.xml" />
+		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="share/mapper/Share.xml" />
+		<mapper resource="main/mapper/Main.xml" />
+	</mappers>
+
 
 </configuration>

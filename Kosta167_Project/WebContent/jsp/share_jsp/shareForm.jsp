@@ -1,9 +1,14 @@
+<%@page import="share.model.Share"%>
+<%@page import="share.model.ShareService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	
-	String str = (String) request.getAttribute("c_id");
+	String c_id = (String) request.getParameter("c_id");
+	System.out.println(c_id);
+	
+	
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
