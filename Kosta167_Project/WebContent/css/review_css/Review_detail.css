@@ -1,0 +1,117 @@
+@CHARSET "EUC-KR";
+
+.header_iss {
+	font-weight: bold;
+	color:#222222;
+	text-align: center;
+}
+
+.detail_img{
+	width:300px;
+}
+
+#dd{
+	width: 1103px;
+}
+
+/* #dd th{
+	font-weight: bold;
+}
+ */
+ 
+.wdt{
+	font-weight: bold;
+	background: #EEEEEE;
+} 
+ 
+#dereply{
+	width: 1103px;
+	top: 30%;
+}
+#dere{
+	width: 1103px;
+	top: 30%;
+}
+
+#sb{
+	background: #666666;
+	color-size: 50px;
+}
+#sb:HOVER{
+	background: #009999; 
+}
+
+#rs{
+	background: #666666;
+	color-size: 50px;
+}
+#rs:HOVER {
+	background: #009999; 
+}
+#sb1{
+	background: #666666;
+	color-size: 50px;
+}
+#sb1:HOVER{
+	background: #009999; 
+}
+
+#rs1{
+	background: #666666;
+	color-size: 50px;
+}
+#rs1:HOVER {
+	background: #009999; 
+}
+
+#gb{
+	font-weight: bold;
+	text-align: center;
+}
+#gb1{
+	font-weight: bold;
+	text-align: center;
+}
+#gb2{
+	font-weight: bold;
+	text-align: center;
+}
+#gb3{
+	font-weight: bold;
+	text-align: center;
+}
+#gb4{
+	font-weight: bold;
+	text-align: center;
+}
+#gb5{
+	font-weight: bold;
+	text-align: center;
+}
+#gb6{
+	font-weight: bold;
+	text-align: center;
+}
+#gbb1{
+	text-align: center;
+}
+#gbb2{
+	text-align: center;
+}
+#gbb3{
+	text-align: center;
+}
+#gbb4{
+	text-align: center;	
+}
+#gbb5{
+	text-align: center;	
+}
+#gbb6{
+	text-align: center;	
+}
+#gbb7{
+	
+}
+
+
