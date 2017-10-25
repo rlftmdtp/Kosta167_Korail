@@ -129,26 +129,36 @@ $(function() {
 			var date = $('#startDate option:selected').val();
 			var startTime = $('#possibleTime option:selected').val(); 
 			
-			$('#storeLine').append('<input type="text" value="'+ date + " " + startTime + " " + startStation + " " + arriveStation +'" name="storeLine'+ lineCnt +'">'
-					+'<span class = "'+ lineCnt +'"> <img src="../../images/course_images/x.png"></span> '); //경로 일부 삭제를 위해 span 추가
+
+			$('#storeLine').append('<div><input type="text" value="'+ date + " " + startTime + " " + startStation+"역" + " " + arriveStation+"역" +'" name="storeLine">'
+					+'<span class = "'+ lineCnt +'"> <img src="../../images/course_images/x.png"></span></div> '); //경로 일부 삭제를 위해 span 추가
+
 			
 			$('#lineCnt').attr('value',lineCnt); // val("값 입력") 은 input type="text"만 가능한듯 "hidden" 은 옆과 같이 실행한다
 			lineCnt++; //
 		});
 		
 		//경로 일부 삭제를 위해 span에 이벤트 걸기
-		
+
 		$('#storeLine').on('click', 'span', function(){
 			var num = $(this).attr('class');
 			$(this).prev().remove();
 			$(this).detach();
-			
+
+			lineCnt--;
 		})
 
 		// 발권역 정보보기 로직
 		$('#issueinfo').click(
 				function() {
-					var issueStation = $('#storeLine').val();
+					
+					// 배열로 ajax넘기기
+					var issueStations =[];
+					$('input[name="storeLine"]').each(function(i){
+						issueStations.push($(this).val());
+						alert($(this).val());
+					})
+
 					var benefit = document.getElementById('benefit');
 					benefit.value = "";
 					$.ajax({
@@ -156,7 +166,9 @@ $(function() {
 						url : 'course_select.jsp',
 						dataType : 'json',
 						data : {
-							"issueStation" : issueStation
+
+							"issueStations" : issueStations
+
 						},
 						success : function(result) {
 							$.each(result, function(index, item) {

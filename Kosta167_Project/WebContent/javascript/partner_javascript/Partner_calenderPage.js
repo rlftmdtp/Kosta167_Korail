@@ -4,7 +4,11 @@ $(function() {
 	var end_date;       //도착날짜
 	var $start_time;    //출발시간
 	var $end_time;      //도착시간
+
 	var $Partner_search;  //검색어
+
+	
+
 	
 	// 가는날 달력 선택하기
 	$( "#datepicker_start" ).datepicker({
@@ -26,6 +30,9 @@ $(function() {
 		}
 	
 	});
+
+	})
+
 
 	// 오는날 달력 선택하기
 	$( "#datepicker_end" ).datepicker({ 
@@ -67,6 +74,7 @@ $(function() {
 	$("#selStartTime").click(function () {
 		$start_time = $(this).val();
 		$("#total_Stime").val($start_time);
+
 	});
 	
 	// 도착 시간 선택 시
@@ -79,8 +87,10 @@ $(function() {
 	
 	// (출발 날짜/시간) + (도착 날짜 /시간)을 ajax로 jsp파일에 값을 전달한다.
 	$('#submit').click(function () {
+
 		var start = $("#total_Sdate").val() + " " + $("#total_Stime").val();
 	    var end = $("#total_Edate").val() + " " + $("#total_Etime").val();
+
 	    alert(start);
 		alert(end);
 		
@@ -90,6 +100,7 @@ $(function() {
 		dataType : 'json',
 		type : 'post'
 		});
+
 	});
 	
 	
@@ -182,6 +193,21 @@ $(function () {
 			var child = window.open('msg_insertform.jsp','childWindow',
 				'resizable=no, width=360, height=380, left=500, top=200, menubar=no, status=no, scrollbars=no');
 	})
+	
+
+	})
+	
+	
+/*	$('.Partner_calender_searchList li').css({
+		display: inline
+	})
+	*/
+
+
+	
+	
+	
+	
 	
 
 })

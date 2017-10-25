@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review.mapper.ReviewMapper">
+
+	<select id = "selectR_no" resultType ="Integer">
+		select max(r_no) from review
+	</select>
+
+	<insert id="insertReview" parameterType="Review">
+		insert into review values(
+			#{r_no}, #{m_id}, #{r_name}, #{r_title}, #{r_content}, #{r_pw},
+			SYSDATE, 0, #{r_fname}
+		)		
+	</insert>
+	
+	<select id="selectB_no" resultType="Integer">
+		select max(m_no) from member
+	</select>
+	
+	<select id="listReview" resultType="Review" parameterType="Search">
+		select * from review
+		<if test="area != null">
+			<where>
+				<!-- b_title Like %JAVA% OR b_name LIKE %JAVA%  -->
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+		order by r_no desc
+		
+	</select>
+	
+	<select id="countReview" resultType="int" parameterType="Search">
+		select count(*) from review
+		<if test="area != null">
+			<where>
+				<!-- b_title Like %JAVA% OR b_name LIKE %JAVA%  -->
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+	</select>
+	
+	<select id="selectReview" parameterType="int" resultType = "Integer">
+		select * from review where r_no= #{r_no}
+	</select>
+	
+	<update id="updateHit" parameterType="Review">
+		update review set r_hit=r_hit+1 where r_no = #{r_no}
+	</update>
+	
+	<select id="selectDetail" parameterType="int" resultType="Review">
+		select * from review where r_no = #{r_no}
+	</select>
+	
+	<update id="updateReview" parameterType="Review">
+		update review set r_title=#{r_title}, r_content=#{r_content}
+		where r_no=#{r_no}
+	</update>
+	
+	<delete id="deleteReview" parameterType="int">
+		delete from review where r_no = #{r_no}
+	</delete>
+	
+	<select id="listReply" resultType="Reply" parameterType="int">
+		 select * from reply 
+		 where r_no = #{r_no}
+		 order by re_no desc
+	</select>
+	
+	<insert id="insertReply" parameterType="Reply">
+		insert into reply(
+		re_no , r_no , re_name, re_content, re_date
+		)values(
+		#{re_no},#{r_no},#{re_name},#{re_content},SYSDATE
+		)
+	</insert>
+	
+	<select id="selectRe_no" resultType="Integer">
+		select max(re_no) from reply
+	</select>
+	
+	<delete id="deleteReply" parameterType="int">
+		delete from reply
+		where r_no = #{r_no}
+	</delete>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

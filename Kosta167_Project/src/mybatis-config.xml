@@ -5,16 +5,26 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias alias="Member" type="partner.model.Member"/>
-		<typeAlias alias="Search" type="partner.model.Search"/>
-		<typeAlias alias="Course" type="course.model.Course"/>
-		<typeAlias alias="CourseDetail" type="course.model.CourseDetail"/>
-		<typeAlias alias="IssueStation" type="course.model.IssueStation"/>
-		<typeAlias alias="Stopstation" type="course.model.Stopstation"/>
-		<typeAlias alias="Traintime" type="course.model.Traintime"/>
+
+	<typeAlias type="review.model.Review" alias="Review"/>
+		<typeAlias type="review.model.Search" alias = "Search"/>
+		<typeAlias type="review.model.Reply" alias = "Reply"/>
+  
+		<typeAlias type="message.model.Message" alias="Message" />
+		<typeAlias type="main.model.Member" alias="Member" />
+		<typeAlias type="partner.model.Search" alias="Search" />
+		<typeAlias type="course.model.Course" alias="Course" />
+		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
+		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
+		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
+		<typeAlias type="course.model.Traintime" alias="Traintime" />
+	
 	</typeAliases>
 
-	<environments default="development">
+
+	
+    	<environments default="development">
+
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<!-- Tomcat서버에 존재하는 커넥션 풀과 연결 -->
@@ -23,10 +33,15 @@
 			</dataSource>
 		</environment>
 	</environments>
-
+	
 	<mappers>
-		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="message/mapper/Message.xml"/>
 		<mapper resource="partner/mapper/Partner.xml"/>
-	</mappers>
+		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="main/mapper/Main.xml"/>
+    <mapper resource="review/mapper/Review.xml"/>
+
+	</mappers>		
+
 
 </configuration>

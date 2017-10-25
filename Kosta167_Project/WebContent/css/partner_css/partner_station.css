@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 
 
+
 .Partner_staion_check{
 	margin: 0 auto;
 	width: 50%;
@@ -15,13 +16,13 @@
  	padding: 20px 20px;
 }
 
-
 .Partner_station_list hr{
 	border: double 3px #D5D5D5;
 	width: 90%;
 	margin-left: 15px;
 	margin-top: 10px;
 }
+
 
 /* 검색한 리스트 나오는 곳 : float속성 제거하고 가운데 정렬해주기  */
 .Partner_station_list{
@@ -103,6 +104,7 @@
     text-align: left;
     line-height: 1.5;
 }
+
 
 
 

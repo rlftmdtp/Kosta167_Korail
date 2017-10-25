@@ -1,0 +1,33 @@
+@CHARSET "EUC-KR";
+
+.header_is {
+	font-weight: bold;
+	color:#222222;
+	text-align: center;
+}
+
+#tt{
+	background: #888888;
+	color-size: 50px;
+	padding-bottom: 3px;
+}
+
+#tt:HOVER{
+	background: #009999; 
+}
+
+#uu{
+	background: #888888;
+	color-size: 50px;
+	padding-bottom: 3px;
+}
+
+#uu:HOVER{
+	background: #009999; 
+}
+
+
+table td{
+	border-left-color: white;
+    border-right-color: white;
+}
