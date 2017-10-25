@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import main.model.Member;
+
 public class MessageService {
 	private static MessageService service = new MessageService();
 	private static MessageDao dao;

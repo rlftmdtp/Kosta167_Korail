@@ -1,5 +1,8 @@
 @CHARSET "UTF-8";
 
+body{
+	height: 100%;
+}
 
 .msgform{
 	text-align : right;

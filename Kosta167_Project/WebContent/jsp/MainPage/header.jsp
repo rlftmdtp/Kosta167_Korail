@@ -24,6 +24,8 @@
 	type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/board.css"
 	type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/All.css"
+	type="text/css" />
 
 
 
@@ -107,18 +109,18 @@
 			<div class="hnn-inner">
 				<!-- GNB -->
 				<ul id="hnn-gnb">
-					<li class="hnn-gnb1 "><a href="RailoInfo.jsp">Star Rail</a>
+					<li class="hnn-gnb1 "><a href="MainStart.jsp?body=RailoInfo.jsp">Star Rail</a>
 						<div>
 							<ul class="hnn-snb1">
-								<li><a href="RailoInfo.jsp">내일로란</a></li>
-								<li><a href="RailoGift.jsp">내일로 혜택</a></li>
+								<li><a href="MainStart.jsp?body=RailoInfo.jsp">내일로란</a></li>
+								<li><a href="MainStart.jsp?body=RailoGift.jsp">내일로 혜택</a></li>
 
 							</ul>
 						</div></li>
-					<li class="hnn-gnb2 "><a href="#">코스 짜기</a>
-					<li class="hnn-gnb3 "><a href="#">동반자 찾기</a></li>
-					<li class="hnn-gnb4 "><a href="#">후기남겨요</a></li>
-					<li class="hnn-gnb5 "><a href="#">공유해요</a></li>
+					<li class="hnn-gnb2 "><a href="MainStart.jsp?body=../course_jsp/*****">코스 짜기</a>
+					<li class="hnn-gnb3 "><a href="MainStart.jsp?body=../partner_jsp/Partner_main.jsp">동반자 찾기</a></li>
+					<li class="hnn-gnb4 "><a href="MainStart.jsp?body=../*********">후기남겨요</a></li>
+					<li class="hnn-gnb5 "><a href="MainStart.jsp?body=../**********">공유해요</a></li>
 				</ul>
 				<!-- GNB -->
 				<!-- 검색 -->

@@ -6,13 +6,15 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="message.model.Message" alias="Message" />
-		<typeAlias type="message.model.Member" alias="Member" />
+		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
 		<typeAlias type="course.model.Course" alias="Course" />
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
 		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
 		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
 		<typeAlias type="course.model.Traintime" alias="Traintime" />
+		
+		
 		
 	</typeAliases>
 	
@@ -30,6 +32,7 @@
 		<mapper resource="message/mapper/Message.xml"/>
 		<mapper resource="partner/mapper/Partner.xml"/>
 		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="main/mapper/Main.xml"/>
 	</mappers>
 	
 </configuration>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "main.mapper.Main">
+<mapper namespace = "main.mapper.MainMapper">
 <select id="login" resultType="Member" parameterType="Member">
 		select *
 		from member where m_id = #{m_id} and m_pw = #{m_pw}

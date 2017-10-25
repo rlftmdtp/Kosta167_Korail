@@ -15,7 +15,9 @@ input.hnn-iform {height:31px;line-height:31px;text-indent:8px;}
 select.hnn-iform {height:33px;}
 textarea.hnn-iform {width:100%; height:33px;height:95px; box-sizing:border-box;}
 
-
+body{
+	height: 100%;
+}
 
 /*
 ==============================

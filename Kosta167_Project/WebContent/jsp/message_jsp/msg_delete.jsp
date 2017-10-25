@@ -4,16 +4,20 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	int msg_no = Integer.parseInt(request.getParameter("msg_no"));
+	System.out.println("나는개똥이"+msg_no);
 	
 	
 	MessageService service = MessageService.getInstance();
-	service.deleteMessage(msg_no);
+	//service.deleteMessage(msg_no);
 	
 	response.sendRedirect("msg_receive.jsp");
 	
+	//response.sendRedirect("msg_receive.jsp");
+/*  	response.sendRedirect("msg_receive.jsp");
+ */
 	
-	/* RequestDispatcher dispatcher = request.getRequestDispatcher("msg_receive.jsp");
-	dispatcher.forward(request, response); */
+	/* RequestDispatcher dispatcher = request.getRequestDispatcher("MainStart.jsp?body=../../message_jsp/msg_receive.jsp");
+	dispatcher.forward(request, response);  */ 
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

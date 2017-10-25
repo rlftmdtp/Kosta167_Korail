@@ -3,7 +3,7 @@ package message.mapper;
 
 import java.util.List;
 
-import message.model.Member;
+import main.model.Member;
 import message.model.Message;
 
 public interface MessageMapper {
