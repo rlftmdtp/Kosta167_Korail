@@ -1,4 +1,4 @@
-<%@page import="course.model.Member"%>
+<%@page import="main.model.Member"%>
 <%@page import="course.model.CourseService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

@@ -1,4 +1,5 @@
 
+
 /* #hnn-wrap {
 	width: 1080px; 
 	margin: 0 auto; 
@@ -12,21 +13,19 @@
 
 .sp {display: block; background: url(../images/sp.png) no-repeat;}
 /* 폼 */
+
 .hnn-iform {display:inline-block;border:1px solid #dcdcdc;}
 input.hnn-iform {height:31px;line-height:31px;text-indent:8px;}
 select.hnn-iform {height:33px;}
 textarea.hnn-iform {width:100%; height:33px;height:95px; box-sizing:border-box;}
 
 
-body{
-	height: 100%;
-}
-
 /*
 ==============================
 HEADER
 ==============================
 */
+
 
 #wrapper{
 	width : 1080px;
@@ -47,6 +46,7 @@ HEADER
 	}
 
 
+
 #hnn-log {position: absolute; right: 90px; top: 38px; height: 18px; line-height: 18px;}
 #hnn-log li {float: left;}
 #hnn-log li {padding: 0 10px; position: relative;}
@@ -57,6 +57,17 @@ HEADER
 #hnn-log li,
 #hnn-log li a {color: #888;}
 #hnn-log li a:hover {color: #333;transition:0.3s;}
+
+==============================
+HEADER
+==============================
+*/
+#hnn-header {
+	position: relative;
+	height: 60px; border: solid #d9d9d9; border-width: 1px 0;}
+
+#hnn-gnb {height: 60px; text-transform: uppercase;}
+
 
 /*
 
@@ -132,8 +143,8 @@ HEADER
 	border-bottom: 1px solid #d5d5d5;
 }
 
-
 /* 검색*/
+
 
 #header-search {
 	position: absolute;
@@ -142,6 +153,7 @@ HEADER
 	border-bottom: 1px solid #d9d9d9;
 }
 #header-search .form {width: 215px; height: 35px; border: 0;letter-spacing: -0.05em;}
+
 
 #header-search .btn {position: absolute; right: 0; top: 0;}  */
 
@@ -153,6 +165,7 @@ VISUAL
 
 /* navi 내려오는 부분 */
 
+
 #hnn-vis {position:relative;width:100%;z-index:0;height:545px;}
 #hnn-vis .hnn-vis {width:100%;height:545px;overflow:hidden;}
 #hnn-vis .hnn-vis img {position:relative;display:block;left:50%;margin-left:-530px;}
@@ -161,6 +174,7 @@ VISUAL
 #hnn-vis .bx-controls-direction .bx-next {background:url(../images/btn.png) -64px -68px no-repeat; right:20px;}
 
 /*
+
 
 PRODUCT
 
@@ -187,6 +201,7 @@ PRODUCT
 	text-transform: uppercase;
 }
 .p-slogan {
+
 	margin-top: 10px; 
 	font-size: 30px; 
 	color: #28afbc; 
@@ -203,9 +218,11 @@ PRODUCT
 .P-list .p-name {padding-top: 10px; font-size: 15px; color: #6a6969; line-height: 20px; word-break:keep-all;}
 .P-list .p-pri {padding-top: 5px; font-size: 16px; color: #000; text-decoration:line-through;}
 .P-list .p-dpri {padding-top: 5px; font-size: 20px; color: #017cc1; font-weight: 500;}
+
 .P-list .bx-controls-direction a {position:absolute;top:50%;margin-top:-20px;z-index:100;display:block;width:40px;height:40px;text-indent:-9999px;}
 .P-list .bx-controls-direction .bx-prev {background:url(../images/btn.png) 0 -28px no-repeat; left:0;}
 .P-list .bx-controls-direction .bx-next {background:url(../images/btn.png) -40px -28px no-repeat; right:0;}
+
 /*
 ==============================
 BOARD
@@ -214,6 +231,7 @@ BOARD
 #hnn-board {
 	margin-top: 20px;
 	height: 66px;
+
 	border: solid #ddd; 
 	border-width: 1px 0;
 }
@@ -229,6 +247,7 @@ BOARD
   vertical-align: top; margin-right: 5px;
 }
 
+
 #hnn-board .board-list {position: relative; top: 25px;}
 #hnn-board .fl .board-roll {left: 100px;}
 #hnn-board .fr .board-roll {left: 125px;}
@@ -243,10 +262,6 @@ SITEMAP
 ==============================
 */
 #hnn-sitemap {background: #222;  text-transform: uppercase; padding: 60px 0 40px;height: 270px;}
-
-#hnn-sitemap .sitemap-list > li {float: left; font-size: 14px; height: 270px;  padding-right: 50px; padding-left: 25px; border-left: 1px solid #393939;}
-#hnn-sitemap .sitemap-list > li:first-child {padding-left: 0; border-left: 0; margin-left: 150px}
-#hnn-sitemap li.map6 {padding-right: 0;}
 
 #hnn-sitemap .sitemap-list > li {float: left; font-size: 14px; height: 270px;  padding-right: 70px; padding-left: 25px; border-left: 1px solid #393939;}
 #hnn-sitemap .sitemap-list > li:first-child {padding-left: 0; border-left: 0; margin-left : 150px;}
@@ -268,6 +283,7 @@ FOOTER
 ==============================
 */
 #hnn-foot {width:100%; border-top:1px solid #d8d8d8; height: 225px;}
+
 .address{
 	width : 1080px;
 	margin : 0 auto;
@@ -285,7 +301,9 @@ FOOTER
 
 #hnn-foot .gotop {
 	position: absolute; top: 0; margin-right:-99px;
+
 	display: block; width: 54px; height: 54px;	background: #017cc1;
 	font-size: 15px; color: #fff; line-height: 54px; text-align: center;
 }
+
 

@@ -5,9 +5,11 @@
 
 <configuration>
 	<typeAliases>
-		<!-- 별칭 설정 설정 -->
-		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
-		<typeAlias type="main.model.Member" alias="Member" />
+
+    <typeAlias type="review.model.Review" alias="Review"/>
+		<typeAlias type="review.model.Search" alias = "Re_Search"/>
+		<typeAlias type="review.model.Reply" alias = "Reply"/>
+  
 		<typeAlias type="message.model.Message" alias="Message" />
 		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
@@ -34,5 +36,8 @@
 			<mapper resource="course/mapper/Course.xml" />
 			<mapper resource="main/mapper/Main.xml" />
 		</mappers>
+		
+	
+  	
 
 </configuration>
