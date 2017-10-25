@@ -55,7 +55,7 @@ public class PartnerDao {
 		
 		try {
 			all_list = sqlSession.getMapper(PartnerMapper.class).partner_allList();
-/*			System.out.println("�ٿ�" + all_list);*/
+/*			System.out.println("´Ù¿À" + all_list);*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -65,14 +65,13 @@ public class PartnerDao {
 		return all_list;
 	}
 
-
 	public List<Member> listSearch(Search search) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Member> list_search = null;
 		try {
-			System.out.println(search);
+			//System.out.println(search);
 			list_search = sqlSession.getMapper(PartnerMapper.class).listSearch(search);
-			System.out.println("�ٿ�2" + list_search);
+			//System.out.println("´Ù¿À2" + list_search);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -83,7 +82,21 @@ public class PartnerDao {
 	}
 	
 	
-	
+
+	public List<Member> station_search(HashMap<String, String> map){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Member> station_list = null;
+		
+		try {
+			station_list = sqlSession.getMapper(PartnerMapper.class).station_search(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return station_list;
+	}
 	
 	
 	

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
@@ -17,14 +16,24 @@
 		<link rel="stylesheet" href="../css/Main_css/layout.css" type="text/css"/>
 		<link rel="stylesheet" href="../css/Main_css/contents.css" type="text/css"/>
 		<link rel="stylesheet" href="../css/Main_css/board.css" type="text/css"/>
-
+<script>
+	// 자바스크립트에서 사용하는 전역변수 선언
+	var g5_url       = "http://www.e-seje.com";
+	var g5_bbs_url   = "http://www.e-seje.com/bbs";
+	var g5_is_member = "";
+	var g5_is_admin  = "";
+	var g5_is_mobile = "";
+	var g5_bo_table  = "";
+	var g5_sca       = "";
+	var g5_editor    = "";
+	var g5_cookie_domain = "";
+</script>
 
 
 <script type="text/javascript" src="http://www.e-seje.com/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="http://www.e-seje.com/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="http://www.e-seje.com/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="http://www.e-seje.com/js/jquery.bxslider.min.js"></script>
-
 <script type="text/javascript" src="http://www.e-seje.com/js/base.js"></script>
 
 <script src="http://www.e-seje.com/js/jquery.shop.menu.js"></script>
@@ -32,7 +41,7 @@
 <script src="http://www.e-seje.com/js/common.js"></script>
 <script src="http://www.e-seje.com/js/wrest.js"></script>
 
-
+	
 </head>
 	<body >
 
@@ -1195,7 +1204,6 @@ $(document).ready(function(){
 
 <!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
 <!--[if lte IE 7]>
-
 <script>
 $(function() {
     var $sv_use = $(".sv_use");
