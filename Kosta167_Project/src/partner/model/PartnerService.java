@@ -1,5 +1,8 @@
 package partner.model;
 
+
+import java.security.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,38 +18,56 @@ public class PartnerService {
 	    return service;
 	 }
 	 
-	 // (startDate : Ãâ¹ß³¯Â¥+½Ã°£) + (endDate : µµÂø³¯Â¥+½Ã°£)¼±ÅÃ ÈÄ ÀÏÄ¡ÇÏ´Â µ¿¹İÀÚÀÇ ¾ÆÀÌµğ ÀÌ¸§ ³ªÀÌ ¼ºº° °Ë»ö
+	 // (startDate : ç•°ì’•ì»»ï¿½ê¶‡ï§ï¿½+ï¿½ë–†åª›ï¿½) + (endDate : ï¿½ë£„ï§¡â‘¸ê¶‡ï§ï¿½+ï¿½ë–†åª›ï¿½)ï¿½ê½‘ï¿½ê¹® ï¿½ì‘ ï¿½ì”ªç§»ì„‘ë¸¯ï¿½ë’— ï¿½ë£è«›ì„ì˜„ï¿½ì“½ ï¿½ë¸˜ï¿½ì” ï¿½ëµ’ ï¿½ì” ç”±ï¿½ ï¿½êµ¹ï¿½ì”  ï¿½ê½¦è¹‚ï¿½ å¯ƒï¿½ï¿½ê¹‹
 	 public List<Member> calendar_searchService(HttpServletRequest request){
-		 
-	     HttpSession session = request.getSession();
-	    
-	      // »õ·Î¿î °Ë»ö ½Ãµµ¸¦ Çß³ª? -> temp°ªÀÌ ³Ñ¾î¿È
-	      if(request.getParameter("map") != null){
-	         // ±âÁ¸¿¡ °Ë»öÇß´ø °ªÀ» Áö¿ò
+
+
+	      HttpSession session = request.getSession();
+	      
+	      // ï¿½ê¹‰æ¿¡ì’–ìŠ« å¯ƒï¿½ï¿½ê¹‹ ï¿½ë–†ï¿½ë£„ç‘œï¿½ ï¿½ë»½ï¿½êµ¹? -> tempåª›ë¯ªì”  ï¿½ê½†ï¿½ë¼±ï¿½ìƒ‚
+        if(request.getParameter("map") != null){
+
+	         // æ¹²ê³—ã€ˆï¿½ë¿‰ å¯ƒï¿½ï¿½ê¹‹ï¿½ë»½ï¿½ëœ• åª›ë¯ªì“£ ï§ï¿½ï¿½ï¿½
 	         session.removeAttribute("map");
 	      }
 	     return dao.calendar_search((HashMap<String, String>)request.getAttribute("map"));
 	 }
 	 
-	 
-	 public List<Member> listSearchService(HttpServletRequest request){
-		 Search search = new Search();
-		 
-		 if(request.getParameter("Partner_search") != null){
-			 search.setPartner_search("%" + request.getParameter("Partner_search")+"%");
-	     }
-		 System.out.println("¼­ºñ½º111"+search.getPartner_search());
-		 return dao.listSearch(search);
-	 }
-	 
+
 	 public List<Member> partner_allListService(){
-/*		 System.out.println("¼­ºñ½º : "+dao.partner_allList());*/
+/*		 System.out.println("ï¿½ê½Œé®ê¾©ë’ª : "+dao.partner_allList());*/
 		 
 		 return dao.partner_allList();
 	 }
 	 
 	 
+	 //ï¿½ë„„
+	 public List<Member> listSearchService(HttpServletRequest request){
+		 Search search = new Search();
+		 HttpSession session = request.getSession();
+		 if(request.getParameter("Partner_search") != null){
+			 session.removeAttribute("Partner_search");
+			 search.setPartner_search("%" + request.getParameter("Partner_search")+"%");
+	     }
+		 //System.out.println("ï¿½ê½Œé®ê¾©ë’ª111"+search.getPartner_search());
+		 return dao.listSearch(search);
+	 }
 	 
+ 
+	 
+	 // (ï§ï¿½ï¿½ë¿­ ï¿½ê½‘ï¿½ê¹®  + ï¿½ë¿­ ï¿½ê½‘ï¿½ê¹®) => ï¿½ê½‘ï¿½ê¹® ï¿½ì‘ ï¿½ì”ªç§»ì„‘ë¸¯ï¿½ë’— ï¿½ë£è«›ì„ì˜„ï¿½ì“½ ï¿½ë¸˜ï¿½ì” ï¿½ëµ’ ï¿½ì” ç”±ï¿½ ï¿½êµ¹ï¿½ì”  ï¿½ê½¦è¹‚ï¿½... å¯ƒï¿½ï¿½ê¹‹
+	 public List<Member> station_searchService(HttpServletRequest request){
+		 HttpSession session = request.getSession();
+		 
+	      // ï¿½ê¹‰æ¿¡ì’–ìŠ« å¯ƒï¿½ï¿½ê¹‹ ï¿½ë–†ï¿½ë£„ç‘œï¿½ ï¿½ë»½ï¿½êµ¹? -> tempåª›ë¯ªì”  ï¿½ê½†ï¿½ë¼±ï¿½ìƒ‚
+	      if(request.getParameter("station_map") != null){
+	         // æ¹²ê³—ã€ˆï¿½ë¿‰ å¯ƒï¿½ï¿½ê¹‹ï¿½ë»½ï¿½ëœ• åª›ë¯ªì“£ ï§ï¿½ï¿½ï¿½
+	         session.removeAttribute("station_map");
+	      }
+	     return dao.station_search((HashMap<String, String>)request.getAttribute("station_map"));
+	 }
+	 
+
 	 
 	 
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="partner.mapper.PartnerMapper">
 	<cache />
 	<!-- TO_DATE('2017-11-10 09:00', 'YYYY-MM-DD HH24:MI') -->
@@ -27,12 +26,15 @@
 			AND d.CD_END = '천안'
 	</select>
 
-	 <select id="partner_allList" resultType="Member"> select m.m_id as 
+	<select id="partner_allList" resultType="Member"> select m.m_id as 
 		m_id, m.m_pw as m_pw, m.m_name as m_name, m.m_gender as m_gender, m.m_age 
 		as m_age, m.m_hp as m_hp from member m, shareText s where m.m_id=s.m_id AND 
-		s.SH_SHAREOK='Y' </select> 
+		s.SH_SHAREOK='Y' 
+	</select> 
 	
-	<select id="listSearch" resultType="Member" parameterType="Search">
+	
+	<select id="station_search" resultType="Member" parameterType="java.util.HashMap">
+
 		select
 			m.m_id as m_id,
 			m.m_pw as m_pw,
@@ -41,10 +43,31 @@
 			m_gender,
 			m.m_age as m_age,
 			m.m_hp as m_hp
-		from COURSE c, member m , shareText s
-		WHERE m.m_id = c.m_id
-			AND	m.m_id= s.m_id
-			AND s.SH_SHAREOK='Y'
-			AND s.sh_title LIKE #{Partner_search}
+
+			  from member m, COURSEDETAIL d, COURSE c, SHARETEXT s
+			  where c.M_ID=m.M_ID
+			    AND d.C_ID = c.C_ID
+			    AND s.M_ID = m.M_ID
+			    AND s.SH_SHAREOK = 'Y'
+			    AND d.CD_END = #{station}		
 	</select>
+	
+	
+	<select resultType="Member" parameterType="Search" id="listSearch">
+		 select 
+			 	m.m_id as m_id,
+			 	m.m_pw as m_pw,
+			 	m.m_name as m_name,
+			 	m.m_gender as m_gender,
+			    m.m_age as m_age,
+			 	m.m_hp as m_hp 
+			 from COURSE c, member m , shareText s 
+			 WHERE m.m_id = c.m_id 
+			 	AND m.m_id= s.m_id 
+			 	AND s.SH_SHAREOK='Y' 
+			 	AND s.sh_title LIKE #{Partner_search} 
+	</select>
+	 
+
+
 </mapper>
