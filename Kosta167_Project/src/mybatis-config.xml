@@ -5,6 +5,7 @@
 
 <configuration>
 	<typeAliases>
+
 		<typeAlias type="message.model.Message" alias="Message" />
 		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
@@ -13,26 +14,22 @@
 		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
 		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
 		<typeAlias type="course.model.Traintime" alias="Traintime" />
-		
-		
-		
-	</typeAliases>
 	
-<environments default="development">
-      <environment id="development">
-         <transactionManager type="JDBC"/>
-         <dataSource type="JNDI">
-            <property name="data_source" value="java:comp/env/jdbc/oracle"/>
-         </dataSource>
-      </environment>      
-   </environments>
-   
+    	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- Tomcat서버에 존재하는 커넥션 풀과 연결 -->
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/oracle" />
+			</dataSource>
+		</environment>
+	</environments>
 	
 	<mappers>
 		<mapper resource="message/mapper/Message.xml"/>
 		<mapper resource="partner/mapper/Partner.xml"/>
 		<mapper resource="course/mapper/Course.xml" />
 		<mapper resource="main/mapper/Main.xml"/>
-	</mappers>
-	
+	</mappers>		
+
 </configuration>
