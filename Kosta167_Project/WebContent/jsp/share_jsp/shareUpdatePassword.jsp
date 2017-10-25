@@ -16,13 +16,14 @@
     	}
     	
     	ShareService service = ShareService.getInstance();
-    	Share share = service.selectShareService(sh_no);
+    	Share share = service.selectShareService(sh_no,false);
     	request.setAttribute("share", share);  
     	
     	
     	
-    	String sh_pw = request.getParameter("sh_pw");
-    	if(share.getSh_pw().equals(sh_pw)){
+    	String pw = request.getParameter("sh_pw");
+    	System.out.println(pw);
+    	if(share.getSh_pw().equals(pw)){
     		share.setSh_title(request.getParameter("sh_title"));
     		share.setSh_content(request.getParameter("sh_content"));
     		
@@ -30,13 +31,15 @@
     		int re= service.updateShareService(share);
     			
     		if(re>0){
-    			out.println("<script> alert('수정되었습니다.');history.back();</script>");
-    			response.sendRedirect("shareList.jsp");
-    			
+    			response.sendRedirect("shareList.jsp");	
+    		}else{
+    			System.out.println("0");
+    					
     		}
     	}else{
     		
-    		response.sendRedirect("ShareList.jsp");
+    		
+    		response.sendRedirect("shareList.jsp");
     	}
     	
     

@@ -101,4 +101,12 @@
 		 order by sr_no desc
 	</select>
 		
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="int">
+		delete from sharereply
+		where sh_no=#{sh_no}
+	
+	</delete>
+	
+
 </mapper>
