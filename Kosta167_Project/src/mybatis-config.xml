@@ -5,13 +5,13 @@
 
 <configuration>
 	<typeAliases>
-		<!-- 별칭 설정 설정 -->
-		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
-		<typeAlias type="course.model.Member" alias="Member" />
-		<typeAlias type="course.model.Course" alias="Course" />
-		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
-		<typeAlias alias="Stopstation" type="course.model.Stopstation" />
-		<typeAlias alias="Traintime" type="course.model.Traintime" />
+		<typeAlias alias="Member" type="partner.model.Member"/>
+		<typeAlias alias="Search" type="partner.model.Search"/>
+		<typeAlias alias="Course" type="course.model.Course"/>
+		<typeAlias alias="CourseDetail" type="course.model.CourseDetail"/>
+		<typeAlias alias="IssueStation" type="course.model.IssueStation"/>
+		<typeAlias alias="Stopstation" type="course.model.Stopstation"/>
+		<typeAlias alias="Traintime" type="course.model.Traintime"/>
 	</typeAliases>
 
 	<environments default="development">

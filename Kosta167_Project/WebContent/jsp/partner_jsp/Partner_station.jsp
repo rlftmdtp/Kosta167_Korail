@@ -90,7 +90,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ 
 	<!-- 팝업레이어 시작 { -->
 	<div id="hd_pop">
 		<h2>팝업레이어 알림</h2>
@@ -114,9 +114,9 @@
 			$("#hd").css("z-index", 1000);
 		});
 	</script>
-	<!-- } 팝업레이어 끝 -->
+	 <!-- 팝업레이어 끝 -->
 	<div id="hnn-wrap">
-		<!-- TNB  -->
+	<!-- 	TNB --> 
 		<div id="hnn-tnb">
 			<div class="hnn-inner">
 				<div id="hnn-logo">
@@ -133,7 +133,7 @@
 					<li><a
 						href="http://www.e-seje.com/bbs/board.php?bo_table=notice">고객센터</a></li>
 				</ul>
-				<!-- 다국어 -->
+			<!-- 	다국어 -->
 				<div id="hnn-lang">
 					<a class="hnn-btn" href="#">Korean <em></em></a>
 					<ul style="">
@@ -146,7 +146,7 @@
 		</div>
 		<!-- //TNB  -->
 
-		<!--HEADER -->
+<!-- 		HEADER -->
 		<div id="hnn-header">
 			<div class="hnn-inner">
 				<!-- GNB -->
@@ -171,8 +171,7 @@
 					<li class="hnn-gnb5 "><a
 						href="http://www.e-seje.com/contents/sub05_01.php">공유해요</a></li>
 				</ul>
-				<!-- GNB -->
-				<!-- 검색 -->
+		
 				<script>
 					function search_submit(f) {
 						if (f.q.value.length < 2) {
@@ -195,13 +194,13 @@
 							class="btn" />
 					</form>
 				</div>
-				<!-- //검색 -->
+		
 			</div>
 			<div class="hnn-bg"></div>
 		</div>
-		<!--HEADER -->			
+		<!-- HEADER -->			
 		</div>
-		<!-- //ELEMENT -->
+		<!-- //ELEMENT  -->
 <!-- 여기까지 메인 코드 -->
 
 
@@ -226,7 +225,7 @@
 					<table>
 					<!-- 노선을 선택하고 역을 선택한 후 검색하면 일치하는 동반자 리스트 출력 -->
 						<tr>
-							<td>노선 선택</td>
+							<th>노선 선택</th>
 							
 							<td>
 								<select	id="station_line" name="station_line">
@@ -238,7 +237,7 @@
 								</select>							
 							</td>
 							
-							<td>역 선택</td>
+							<th>역 선택</th>
 							<td><select	id="station_line_in" name="station_line_in"></select></td>
 						</tr>
 						

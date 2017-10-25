@@ -15,19 +15,46 @@
 	request.setCharacterEncoding("utf-8");
 
 	PartnerService service = PartnerService.getInstance();
-	List<Member> m_list = null;
+
+	// 날짜+시간
+	List<Member> c_list = null;
 	HashMap<String, String> map = (HashMap<String, String>) request.getAttribute("map");
-	
-	if(map!=null){
-		m_list = service.calendar_searchService(request);
-		session.setAttribute("calendar_list", m_list);
-		/* session.setMaxInactiveInterval(1*1); */
-		System.out.println("*메인m_list : " + m_list);
+
+	// 역
+	List<Member> s_list = null;
+	HashMap<String, String> station_map = (HashMap<String, String>) request.getAttribute("station_map");
+
+	// 검색어
+	String Partner_search = ((String) request.getAttribute("Partner_search"));
+
+	if (map != null) { // 희정 -날짜+시간
+		c_list = service.calendar_searchService(request);
+		session.setAttribute("list", c_list);
+		System.out.println("-날짜 시간list : " + c_list + "\n\n");
+		request.removeAttribute("map");
 	}
 
+	else if (station_map != null) { // 희정 - 역
+		s_list = service.station_searchService(request);
+		session.setAttribute("list", s_list);
+		System.out.println("-역 list가 나오니 :  " + s_list + "\n\n");
+		request.removeAttribute("station_map");
+	}
+
+	else if (Partner_search != null) { // 솔 - 검색
+		List<Member> list = service.listSearchService(request);
+		session.setAttribute("list", list);
+		System.out.println("-검색어 입력 시 list가 나오니 : " + list + "\n\n");
+		request.removeAttribute("Partner_search");
+	}
 	
-	List<Member> all_list = service.partner_allListService();
-	request.setAttribute("all_list", all_list); 
+	else{
+		
+	}
+
+	/* 	모든 리스트 받아옴
+		List<Member> all_list = service.partner_allListService();
+		request.setAttribute("all_list", all_list);  */
 %>
 
 
@@ -43,13 +70,18 @@
 <meta name="naver-site-verification" content="" />
 <title>Star Rail</title>
 
+
+
 <link rel="stylesheet" href="../../css/Main_css/default_shop.css"
 	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/common.css" type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/common.css"
+	type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/layout.css"
+	type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/contents.css"
 	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/board.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/board.css"
+	type="text/css" />
 <script>
 	// 자바스크립트에서 사용하는 전역변수 선언
 	var g5_url = "http://www.e-seje.com";
@@ -84,8 +116,10 @@
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript"
 	src="../../javascript/partner_javascript/Partner_calenderPage.js"></script>
-<link rel="stylesheet" href="../../css/partner_css/partner_calendar.css?ver=1"
-	type="text/css" />
+<link rel="stylesheet"
+	href="../../css/partner_css/partner_calendar.css?ver=1" type="text/css" />
+<link rel="stylesheet"
+	href="../../css/partner_css/partner_station.css?ver=1" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -200,9 +234,9 @@
 			</div>
 			<div class="hnn-bg"></div>
 		</div>
-		<!--HEADER -->			
-		</div>
-		<!-- //ELEMENT -->
+		<!--HEADER -->
+	</div>
+	<!-- //ELEMENT -->
 
 
 	<!-- 기본적으로 내 코스의 정보가 떠야 함 -->
@@ -216,13 +250,76 @@
 		</div>
 
 
+
+
+
+
+
+
+
+
 		<!-- 동반자를 검색하기위한 조건 선택 : 날짜/시간	 -->
 		<div class="Partner_calendar_check">
+
+
+			<!-- 	솔 start-->
+			<div class="Partner_main_search">
+				<p>
+				<h2>
+					<strong>전국 Star Rail 동반자를 한번에 만나는 통합 검색</strong>
+				</h2>
+				</p>
+
+				<div class="Partner_main_search_box">
+					<form>
+						<input type="text" id="Partner_search" size="50"> <input
+							id="Partner_search_button" type="submit">
+					</form>
+				</div>
+			</div>
+			<!-- 	솔 end-->
+
+
+
+
+			<!-- 동반자를 검색하기위한 조건 선택 : 지역  -> 역검색 start	 -->
+			<div class="Partner_staion_check">
+				<form>
+					<div id="partner_station_sel">
+						<table>
+							<!-- 노선을 선택하고 역을 선택한 후 검색하면 일치하는 동반자 리스트 출력 -->
+							<tr>
+								<th>노선 선택</th>
+
+								<td><select id="station_line" name="station_line">
+										<option>서울</option>
+										<option>경기도</option>
+										<option>충청남도</option>
+										<option>강원도</option>
+										<option>전라북도</option>
+								</select></td>
+
+								<th>역 선택</th>
+								<td><select id="station_line_in" name="station_line_in"></select></td>
+							</tr>
+
+							<tr>
+								<td colspan="4"><input type="submit" value="검색"></td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+			<!-- 동반자를 검색하기위한 조건 선택 : 지역  -> 역검색 end	 -->
+
+
+
+			<!-- 동반자를 검색하기위한 조건 선택 : 날짜  -> 시간 검색 start	 -->
 			<form>
-				<input type="hidden" id="total_Sdate" value="total_Sdate">
-				<input	type="hidden" id="total_Edate" value="total_Edate">
-				<input type="hidden" id="total_Stime" value="total_Stime">
-				<input type="hidden" id="total_Etime" value="total_Etime">
+				<input type="hidden" id="total_Sdate" value="total_Sdate"> <input
+					type="hidden" id="total_Edate" value="total_Edate"> <input
+					type="hidden" id="total_Stime" value="total_Stime"> <input
+					type="hidden" id="total_Etime" value="total_Etime">
 
 				<table>
 					<tr>
@@ -237,24 +334,24 @@
 						<td>출발 날짜</td>
 						<!-- 출발 날짜 선택한 텍스트박스 -->
 						<td><input type="text" id="datepicker_start"></td>
-						
+
 						<td>출발 시간</td>
 						<td>
-							<!-- 출발하는 날 시간 선택한 셀렉트박스 --> 
-							<select id="selStartTime"	name="selStartTime"></select>
+							<!-- 출발하는 날 시간 선택한 셀렉트박스 --> <select id="selStartTime"
+							name="selStartTime"></select>
 						</td>
-						
+
 					</tr>
 
 					<tr>
 						<td>도착 날짜</td>
 						<!-- 출발 날짜 선택한 텍스트박스 -->
 						<td><input type="text" id="datepicker_end"></td>
-						
+
 						<td>도착 시간</td>
 						<td>
-							<!-- 도착하는 날 시간 선택한 셀렉트박스 --> 
-							<select	id="selEndTime" name="selEndTime"></select>
+							<!-- 도착하는 날 시간 선택한 셀렉트박스 --> <select id="selEndTime"
+							name="selEndTime"></select>
 						</td>
 					</tr>
 
@@ -264,6 +361,8 @@
 				</table>
 
 			</form>
+			<!-- 동반자를 검색하기위한 조건 선택 : 날짜  -> 시간 검색 end	 -->
+
 		</div>
 
 
@@ -272,39 +371,38 @@
 
 		<!-- 동반자 검색 시 나오는 리스트 -> 후행 : 페이징 처리  / 	 -->
 		<div class="Partner_calendar_list">
-		<hr>
+			<hr>
 			<ul class="Partner_calender_searchList">
-				<c:choose >
-				<c:when test="${calendar_list != null}">
-					<c:forEach var="c" items="${calendar_list}">
-					<li>
-						<a href="#">
-							<div>
-								<div id="Partner_calender_searchImage">
-									<img src="../../images/partner_images/search_map.PNG">
+				<c:choose>
+					<c:when test="${list != null}">
+						<c:forEach var="c" items="${list}">
+							<li><a href="#">
+									<div>
+										<div id="Partner_calender_searchImage">
+											<img src="../../images/partner_images/search_map.PNG">
 
-									<div class="Partner_sendMessage">
-										<input id="message_send" type="image" src="../../images/partner_images/messages-icon.png">
+											<div class="Partner_sendMessage">
+												<input id="message_send" type="image"
+													src="../../images/partner_images/messages-icon.png">
+											</div>
+										</div>
+
+										<div class="Partner_info_cSearch">
+											<p class="name">${c.m_name}</p>
+											<p class="gender">${c.m_gender}</p>
+											<p class="age">${c.m_age}</p>
+										</div>
 									</div>
-								</div>
-
-								<div class="Partner_info_cSearch">
-									<p class="name">${c.m_name}</p>
-									<p class="gender">${c.m_gender}</p>
-									<p class="age">${c.m_age}</p>
-								</div>
-							</div>
-						</a>
-					</li>
-				</c:forEach>
-				</c:when>
+							</a></li>
+						</c:forEach>
+					</c:when>
 				</c:choose>
-				
-				
+
+
 			</ul>
 		</div>
-		
-		
+
+
 	</div>
 
 

@@ -66,6 +66,26 @@ public class PartnerDao {
 	}
 	
 	
+	
+	
+	// ¼Ö
+	public List<Member> listSearch(Search search) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Member> list_search = null;
+		try {
+			//System.out.println(search);
+			list_search = sqlSession.getMapper(PartnerMapper.class).listSearch(search);
+			//System.out.println("´Ù¿À2" + list_search);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return list_search;
+	}
+	
+	
 	public List<Member> station_search(HashMap<String, String> map){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Member> station_list = null;

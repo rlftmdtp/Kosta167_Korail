@@ -185,9 +185,9 @@
 					</p>
 					
 					<div class="Partner_main_search_box">
-						<form id="Partner_main_search_form" action="Partner_calendar.jsp" method="post">
-							<input type="text" id="Partner_search" size="50">
-							<input type="submit" id="Partner_search_button" value="">
+						<form id="Partner_main_search_form" action="Partner_mainSearchOk.jsp" method="post">
+							<input type="text" name="Partner_search" size="50">
+							<input type="submit" id="Partner_search_button" >
 						</form>
 					</div>
 				</div>

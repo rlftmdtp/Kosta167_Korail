@@ -50,6 +50,22 @@
 			    AND s.SH_SHAREOK = 'Y'
 			    AND d.CD_END = #{station}		
 	</select>
+	
+	
+	<select resultType="Member" parameterType="Search" id="listSearch">
+		 select 
+			 	m.m_id as m_id,
+			 	m.m_pw as m_pw,
+			 	m.m_name as m_name,
+			 	m.m_gender as m_gender,
+			    m.m_age as m_age,
+			 	m.m_hp as m_hp 
+			 from COURSE c, member m , shareText s 
+			 WHERE m.m_id = c.m_id 
+			 	AND m.m_id= s.m_id 
+			 	AND s.SH_SHAREOK='Y' 
+			 	AND s.sh_title LIKE #{Partner_search} 
+	</select>
 	 
 
 

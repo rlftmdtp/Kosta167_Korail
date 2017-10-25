@@ -18,7 +18,7 @@
 	System.out.println(map);
 
 	if(map != null){
-	    RequestDispatcher rd = request.getRequestDispatcher("Partner_station.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("Partner_calendar.jsp");
 	    request.setAttribute("station_map", map);
 	    rd.forward(request, response);
 	}

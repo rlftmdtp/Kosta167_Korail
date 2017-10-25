@@ -23,10 +23,10 @@ public class PartnerService {
 	      HttpSession session = request.getSession();
 	      
 	      // 새로운 검색 시도를 했나? -> temp값이 넘어옴
-/*	      if(request.getParameter("map") != null){
+        if(request.getParameter("map") != null){
 	         // 기존에 검색했던 값을 지움
 	         session.removeAttribute("map");
-	      }*/
+	      }
 	     return dao.calendar_search((HashMap<String, String>)request.getAttribute("map"));
 	 }
 	 
@@ -37,6 +37,19 @@ public class PartnerService {
 	 }
 	 
 	 
+	 //솔
+	 public List<Member> listSearchService(HttpServletRequest request){
+		 Search search = new Search();
+		 HttpSession session = request.getSession();
+		 if(request.getParameter("Partner_search") != null){
+			 session.removeAttribute("Partner_search");
+			 search.setPartner_search("%" + request.getParameter("Partner_search")+"%");
+	     }
+		 //System.out.println("서비스111"+search.getPartner_search());
+		 return dao.listSearch(search);
+	 }
+	 
+ 
 	 
 	 // (지역 선택  + 역 선택) => 선택 후 일치하는 동반자의 아이디 이름 나이 성별... 검색
 	 public List<Member> station_searchService(HttpServletRequest request){
