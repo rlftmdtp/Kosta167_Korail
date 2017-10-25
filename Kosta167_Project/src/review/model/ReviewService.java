@@ -12,7 +12,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import review.model.Reply;
 import review.model.ListModel;
-import review.model.Search;
+import review.model.Re_Search;
 import review.model.Review;
 import review.model.ImageUtil;
 
@@ -91,7 +91,7 @@ public class ReviewService {
 	}
 
 	 public ListModel listReviewService(HttpServletRequest request , int requstPage) {
-		Search search = new Search();
+		Re_Search search = new Re_Search();
 		
 		HttpSession session = request.getSession();
 		
@@ -107,9 +107,9 @@ public class ReviewService {
 			search.setSearchKey("%" + request.getParameter("searchKey") + "%");
 			session.setAttribute("search", search);
 			
-		}else if ((Search) session.getAttribute("search") != null){
+		}else if ((Re_Search) session.getAttribute("search") != null){
 			//寃��깋 �썑 �럹�씠吏뺤쓣 �겢由� �떆 session�씠 �쑀吏��릺�뼱�빞 �븳�떎.
-			search = (Search) session.getAttribute("search");
+			search = (Re_Search) session.getAttribute("search");
 		}
 		
 		

@@ -36,7 +36,7 @@
 
 <body>
 <div id = "wrap">
-
+	<div class = "header-wrap">
 	<div id="hnn-wrap">
 			<!-- TNB  -->
 			<div id="hnn-tnb">
@@ -54,7 +54,7 @@
 							href="../message_jsp/msg_receive.jsp">쪽지함</a></li>
 						<li><a href="Mypage.jsp">마이페이지</a></li>
 					</ul>
-					
+					</div>		
 				</div>
 			</div>
 
@@ -72,7 +72,7 @@
 						</div></li>
 					<li class="hnn-gnb2 "><a href="../course_jsp/course.jsp">코스 짜기</a>
 					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_main.jsp">동반자 찾기</a></li>
-					<li class="hnn-gnb4 "><a href="../review_jsp/">후기남겨요</a></li>
+					<li class="hnn-gnb4 "><a href="../review_jsp/reviewlist.jsp">후기남겨요</a></li>
 					<li class="hnn-gnb5 "><a href="../share_jsp/shareForm.jsp">공유해요</a></li>
 				</ul>
 				</div>
@@ -81,7 +81,7 @@
 
 
 <!-- 메인값  -->
-	<div class="body-Wrap">
+	<div class="body-wrap">
 		<!-- VISUAL -->
 		<div id="hnn-vis">
 			<ul class="vis-roll">

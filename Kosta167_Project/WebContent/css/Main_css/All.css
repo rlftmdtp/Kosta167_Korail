@@ -6,14 +6,14 @@
 	margin:0 auto;
 }
 
-.header-Wrap{
+.header-wrap{
 	height : 20%;
 	
 }
 
-.body-Wrap{
+.body-wrap{
 	position: relative;
-	padding-bottom: 40%;
+	padding-bottom: 150px;
 }
 
 .footer-wrap{

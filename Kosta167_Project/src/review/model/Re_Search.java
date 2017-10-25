@@ -1,10 +1,10 @@
 package review.model;
 
-public class Search {
+public class Re_Search {
 	private String[] area;
 	private String searchKey;
 	
-	public Search() {}
+	public Re_Search() {}
 
 	public String[] getArea() {
 		return area;

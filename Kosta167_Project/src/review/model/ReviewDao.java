@@ -12,7 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import review.model.Reply;
-import review.model.Search;
+import review.model.Re_Search;
 import review.mapper.ReviewMapper;
 import review.model.Review;
 import review.model.ReviewDao;
@@ -70,7 +70,7 @@ public class ReviewDao {
 		return re;
 	}
 
-	public List<Review> listReview(int startRow , Search search) {
+	public List<Review> listReview(int startRow , Re_Search search) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Review> list = null;
 
@@ -165,7 +165,7 @@ public class ReviewDao {
 		return re;
 	}
 	
-	public int countBoard(Search search){
+	public int countBoard(Re_Search search){
 		SqlSession sqlSession =getSqlSessionFactory().openSession();
 		int re  = -1;
 		try {
