@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<!-- 
+	
 	<form action="course_Login.jsp" method="post">
 	로그인
 	<input type="text" name="id">
@@ -37,7 +37,7 @@
 	이름<input type="text" value="<%=session.getAttribute("name")%>" id="name" disabled="disabled">
 	아이디<input type="text" value="<%=session.getAttribute("m_id")%>" id="m_id" disabled="disabled">
 	</form>
-	 -->
+	 
 					<form id="selectCourseForm">
 						<h3>여행 세부 코스 짜기</h3>
 						여행날짜선택<input type="text" id="datepicker" size="10"> 여행기간선택
