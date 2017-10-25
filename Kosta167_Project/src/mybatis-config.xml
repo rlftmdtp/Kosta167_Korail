@@ -6,6 +6,10 @@
 <configuration>
 	<typeAliases>
 
+    <typeAlias type="review.model.Review" alias="Review"/>
+		<typeAlias type="review.model.Search" alias = "Re_Search"/>
+		<typeAlias type="review.model.Reply" alias = "Reply"/>
+  
 		<typeAlias type="message.model.Message" alias="Message" />
 		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
@@ -30,6 +34,8 @@
 		<mapper resource="partner/mapper/Partner.xml"/>
 		<mapper resource="course/mapper/Course.xml" />
 		<mapper resource="main/mapper/Main.xml"/>
+    <mapper resource="review/mapper/Review.xml"/>
+
 	</mappers>		
 
 </configuration>
