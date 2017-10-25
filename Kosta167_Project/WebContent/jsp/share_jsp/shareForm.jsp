@@ -5,7 +5,8 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	
-	String str = (String) request.getAttribute("c_id");
+	String c_id = (String) request.getParameter("c_id");
+	System.out.println(c_id);
 	
 	
 	
@@ -54,7 +55,9 @@
 		<form name=wirteform method="post" action="shareinsertOk.jsp">
 			<tr>
 				<td>
+
 					<table width="100%" cellpadding="0"
+
 						cellspacing="0" border="0" >
 						
 					<tr  style="background:url('../../images/share_images/table_mid.gif') repeat-x; text-align: center;">

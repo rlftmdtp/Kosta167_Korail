@@ -41,12 +41,12 @@ public class CourseService {
 		
 		String c_id = dao.selectC_id() + 1 + "";
 
-		course.setC_id(c_id); // µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¸ÀçÇÏ´Â µ¥ÀÌÅÍ ÃÖ´ëÄ¡¿¡ + 1
+		course.setC_id(c_id); // ë°ì´í„°ë² ì´ìŠ¤ì— ì¡´ì¬í•˜ëŠ” ë°ì´í„° ìµœëŒ€ì¹˜ì— + 1
 		course.setM_id(m_id);
 		
 		int re = dao.insertCourse(course);
 		
-		if(re>0){ // ÄÚ½º ÀúÀå¿¡ ¼º°øÇßÀ» °æ¿ì ¹æ±İ »ı¼ºµÈ ÇØ´ç ÄÚ½º id¸¦ ¹İÈ¯
+		if(re>0){ // ì½”ìŠ¤ ì €ì¥ì— ì„±ê³µí–ˆì„ ê²½ìš° ë°©ê¸ˆ ìƒì„±ëœ í•´ë‹¹ ì½”ìŠ¤ idë¥¼ ë°˜í™˜
 			return Integer.parseInt(c_id);
 		}
 		else{
@@ -59,11 +59,14 @@ public class CourseService {
 	}
 	
 	public int insertCourseDetail(CourseDetail courseDetail){
-		courseDetail.setCd_id(dao.selectCd_id()+1 + "");
+
+		System.out.println(dao.selectCd_id());
+		courseDetail.setCd_id(dao.selectCd_id()+ 1 + "");
+
 		return dao.insertCourseDetail(courseDetail);
 	}
 	
-	// À±ÁÖ´©³ª ÄÚµå
+	// ìœ¤ì£¼ëˆ„ë‚˜ ì½”ë“œ
 	public List<String> startListService() {
 		return dao.startList();
 	}
