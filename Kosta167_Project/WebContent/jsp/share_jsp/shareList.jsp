@@ -183,11 +183,32 @@
 
          
       </div>
+      
+      
+      
+      
 	<center>
-	<h3> 공유게시판 </h3>
+	<table>
+		<form name=wirteform method="post" action="shareinsertOk.jsp">
+			<tr>
+				<td>
+					<table width="100%" cellpadding="0"
+						cellspacing="0" border="0" >
+						
+					<tr style="background:url('../../images/share_images/table_mid.gif') repeat-x; text-align:center;">
+							<td width="5"><img src="../../imgages/share_images/table_left.gif" width="5"
+								height="30" /></td> 
+							
+							<td> 공 유 목 록</td>
+							<td width="5"><img src="../../imgages/share_images/table_right.gif" width="5"
+								height="30" /></td> 
+					</tr>
+					</table>
+					
 	
 			<table class="table table-striped"
 				style="text-align: center; border: 1px solid=#dddddd">
+				<br><br>
 					<tr height="50">
 						<th width="160"
 							style="background-color: #eeeeee; text-align: center;">글번호</th>
@@ -206,7 +227,7 @@
 				<td>${share.sh_no}</td>
 				<td align="left">
 				${share.sh_subject} <a href="shareDetail.jsp?sh_no=${share.sh_no }">${share.sh_title }</a></td>
-				<%-- <td>${member.m_name}</td> --%>
+				<%-- <td>${member.get}</td> --%>
 				<td>
 				 <fmt:formatDate value="${share.sh_date}" pattern="yyyy-MM-dd"/> 
 				</td>
@@ -214,10 +235,18 @@
 			</tr>
 			</c:forEach>
 		
+			<tr height="3" bgcolor="#dddddd">
 			
-		
+			
+			<tr align="right">
+			
+				<td colspan="4">
+				<input type="button" value="메인" onclick="">&nbsp;&nbsp; 
+				<input type="button" value="글쓰기" onclick="gotoshareInsert()"></td>
+			</tr>
+			
 			</table>
-			
+			<table>
 			<!-- 페이징 처리 -->
 			<!-- 이전 페이지 가기 -->
 			
@@ -241,24 +270,23 @@
 			
 				<a href = "shareList.jsp?pageNum=${listModel.endPage+1}">[▷]</a>
 				<a href = "shareList.jsp?pageNum=${listModel.totalPageCount }">[▷▶]</a>
+				
 			</c:if>
 			
-			<table align="right">
-			<tr>
-			<br>
-				<td colspan="4">
-				<input type="button" value="메인" onclick="">&nbsp;&nbsp; 
-				<input type="button" value="글쓰기" onclick="gotoshareInsert()"></td>
-			</tr>
-			</table>
-	
+			<br><br>
+			
+	</td>
+	</tr>
+	</form>
+	</table>
 	<form action="shareList.jsp" method="post">
 		
-		<input type="checkbox" name="area" value = "sh_title"> 제목 
-		<input type="checkbox" name="area" value = "m_name"> 작성자
-		<input type="text" name="searchKey" size="10"></input>
+		<input type="checkbox" name="area" value ="sh_title"> 제목 
+		<input type="checkbox" name="area" value ="m_name"> 작성자 &nbsp;
+		<input type="text" name="searchKey" size="20"></input>
  		<input type="submit" value="검색">
 	</form>
+	
 	</center>
 	
 	

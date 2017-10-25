@@ -12,6 +12,9 @@
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
 		<typeAlias alias="Stopstation" type="course.model.Stopstation" />
 		<typeAlias alias="Traintime" type="course.model.Traintime" />
+		<typeAlias type="share.model.Share" alias="Share"/>
+		<typeAlias type="share.model.ShareSearch" alias="ShareSearch"/>
+		<typeAlias type="share.model.ShareReply" alias="ShareReply"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -26,6 +29,7 @@
 
 	<mappers>
 		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="share/mapper/Share.xml"/>
 	</mappers>
 
 </configuration>

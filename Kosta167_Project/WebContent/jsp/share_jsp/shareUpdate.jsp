@@ -5,6 +5,7 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
+
 	String id = request.getParameter("sh_no");
 	int sh_no = 0;
 	if (id != null) {
@@ -12,7 +13,7 @@
 	}
 
 	ShareService service = ShareService.getInstance();
-	Share share = service.selectShareService(sh_no);
+	Share share = service.selectShareService(sh_no,false);
 
 	request.setAttribute("share", share);
 %>
@@ -22,33 +23,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판</title>
 <script type="text/javascript">
-	function write() {
+function writeCheck(){
 	
-	var form = document.wirteform;	
+	var form = document.write;	
 	
-		if( !form.sh_title.value) {
-			alert("제목을 입력해주세요.");
-			form.sh_title.focus();
-			return;
-		}
-		if( !form.sh_content.value) {
-			alert("내용을 입력해주세요.");
-			form.sh_content.focus();
-			return;
-		}if( !form.sh_content.value) {
-			alert("비밀번호를 입력해주세요.");
-			form.sh_pw.focus();
-			return;
+	if( !form.sh_pw.value){
+		alert("비밀번호를 입력해주세요.");
+		form.sh_pw.focus();
+		return;
+	}
+	if( !form.sh_title.value) {
+		alert("제목을 입력해주세요.")
+		form.sh_title.focus();
+		return;
+	}
+	if( !form.sh_content.value) {
+		alert("내용을 입력해주세요.")
+		form.sh_content.focus();
+		return;
+	}
 	
 	
 	form.submit();
-}
+} 
 </script>
 </head>
 <body>
 	<center>
 		<h1>글수정하기</h1>
-		<form action="" method="post">
+		<form action="shareUpdatePassword.jsp" name="write" method="post">
 			<input type="hidden" name="sh_no" value="<%=sh_no%>">
 			<table border="1" cellpadding="0" cellspacing="0">
 				<tr height="30">
@@ -69,10 +72,11 @@
 							name="sh_content">${share.sh_content }</textarea></td>
 				</tr>
 				<tr height="30">
-					<td colspan="3" align="center"><input type="button"
-						value="수정하기" onclick="write();"></td>
-
-					<td><input type="reset" value="취소" /></td>
+					
+					<td colspan="4" align="center"><input type="button"
+						value="수정하기" onclick="writeCheck();" >
+					&nbsp;&nbsp;
+					<input type="reset" value="취소" /></td>
 				</tr>
 			</table>
 

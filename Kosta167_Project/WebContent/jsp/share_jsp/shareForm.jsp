@@ -1,9 +1,13 @@
+<%@page import="share.model.Share"%>
+<%@page import="share.model.ShareService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	
 	String str = (String) request.getAttribute("c_id");
+	
+	
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -45,26 +49,27 @@
 </head>
 <body>
 <center>
+
 	 <table>
 		<form name=wirteform method="post" action="shareinsertOk.jsp">
 			<tr>
 				<td>
-					
-					<table width="150%" cellpadding="0"
+					<table width="100%" cellpadding="0"
 						cellspacing="0" border="0" >
 						
 					<tr  style="background:url('../../images/share_images/table_mid.gif') repeat-x; text-align: center;">
 							<td width="5"><img src="../../imgages/share_images/table_left.gif" width="5"
 								height="30" /></td> 
 							
-							<h3 align="center"> 글 쓰 기<h3>
-							</tr>
+							<td align="center"> 글 쓰 기</td>
 							<td width="5"><img src="../../imgages/share_images/table_right.gif" width="5"
 								height="30" /></td> 
 					</tr>
-					<tr style="font-size: 5px" align="left"> (*)는 필수입력 </tr>
+					
 					</table>
+					
 					<table>
+					<h6 align="right">(*)는 필수 입력사항입니다.</h6>
 					<tr height="3" bgcolor="#82B5DF">
 						<td colspan="3"></td>
 					<tr>
@@ -101,8 +106,9 @@
 						<tr>
 							<td>&nbsp;</td>
 							<td align="center">작성자</td>
-							<td><input type="hidden" name="m_name" size="50" maxlength="100"></td>
+							<td><input type="text" name="m_name" value="<%=session.getAttribute("name")%>"size="50" maxlength="100"></td>
 							<td>&nbsp;</td>
+							
 						</tr>
 						<tr height="1" bgcolor="#dddddd">
 							<td colspan="4"></td>
