@@ -1,9 +1,116 @@
 @CHARSET "UTF-8";
 
-#selectCourseForm{
-	border-right : 1px solid ;
-	padding:20px; /*위아래좌우여백주기*/
+
+body{margin:0;}
+#courseWrap{
+	width:1080px;
+	margin:0 auto;
+	padding:0px;
+}
+
+#c_title{
+	margin:0;
 	text-align: center;
+	margin:20px 0 25px 0;
+}
+
+
+#mapImg{
+	float:left;
+	width:631px;
+	height:751px;
+	margin-right:15px;
+	padding-top:47px;
+	text-align: center;
+	border: 2px dotted #BDBDBD;
+	border-radius:15px;
+}
+
+.viewSelectCourse{
+	width:620px;
+}
+
+#makeCourse{
+	width:430px;
+	height: 802px;
+	margin:0;
+	float:left;
+}
+
+#courseSetting{
+	height:265px;
+	border-radius:15px;
+	border:2px dotted #BDBDBD;
+}
+
+.cs1_title{
+	margin:15px 0 10px 0;
+	padding-left:1em;
+}
+
+.cs1{
+	text-align:center;
+	border-bottom: 1px dotted #BDBDBD;
+	padding-bottom:20px;
+}
+
+.cs2_title{
+	margin:15px 0 10px 0;
+	padding-left:1em;
+}
+
+.cs2{
+	padding:0 2em 0 2em;
+}
+
+.cs2 p{
+	margin: 0 0 15px 0;
+	text-align: right;
+}
+
+#settedCourse{
+	margin-top:15px;
+	height: 300px;
+	border: 2px dotted #BDBDBD;
+	border-radius:15px;
+	overflow: auto;
+	padding-bottom:15px;
+}
+
+.sc_title{
+	margin:15px 0 10px 0;
+	padding-left:1em;
+}
+
+.sc{
+	padding: 0 2em 0 2em;
+}
+
+.sc p {
+	margin:0;
+	text-align: right;
+}
+
+#issueSetting{
+	margin-top:15px;
+	height: 180px;
+	border: 2px dotted #BDBDBD;
+	border-radius:15px;
+	overflow: auto;
+}
+
+#issueSetting p{
+	padding-left:1em;
+	margin:15px 0 15px 0;
+}
+
+.ta{
+	text-align: center;
+}
+.ta textarea{
+	width: 400px;
+	height:100px;
+	
 }
 
 #arrow{

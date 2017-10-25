@@ -146,7 +146,14 @@
 					System.out.println("실패");
 				}
 			}
-			response.sendRedirect("course.jsp");
+			
+			if(c_id > 0)
+			{
+			RequestDispatcher rd = request.getRequestDispatcher("../../jsp/share_jsp/shareQuestion.jsp");
+			request.setAttribute("c_id",c_id);
+			rd.forward(request, response);
+			}
+		
 		} else { // 코스 저장에 실패
 			out.println("로그인을 해주세요");
 		}

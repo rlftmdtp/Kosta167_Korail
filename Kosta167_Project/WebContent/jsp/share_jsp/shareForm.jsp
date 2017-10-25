@@ -3,7 +3,8 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	
-	String str = (String) request.getAttribute("c_id");
+	String c_id = (String) request.getParameter("c_id");
+	System.out.println(c_id);
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,7 +50,7 @@
 		<form name=wirteform method="post" action="shareinsertOk.jsp">
 			<tr>
 				<td>
-					
+					<input type="hidden" value="<%=c_id%>"><%=c_id%>
 					<table width="150%" cellpadding="0"
 						cellspacing="0" border="0" >
 						
