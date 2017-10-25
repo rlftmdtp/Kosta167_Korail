@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+/* 날짜/시간 선택하는 테이블 위치 조정하기 */
+.Partner_calendar_check{
+	
+	margin-top : 150px;
+	padding: 10px 20px;
+	border: 1px solid #D5D5D5;
+	border-radius: 15px;
+}
+
+/* 내 코스 정보 옆에 날짜와 시간을 선택 할 수 있도록 하기 위함 */
+.partner_myCourse{
+	float: left;
+	margin: 20px 60px;
+}
+
+/* 날짜/시간 선택하는 것 오른쪽 정렬 */
+.Partner_calendar_check{
+	float: right;
+	margin-right: 100px;
+}
+
+.Partner_calendar_list hr{
+	border: double 3px #D5D5D5;
+	width: 90%;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+/* 검색한 리스트 나오는 곳 : float속성 제거하고 가운데 정렬해주기  */
+.Partner_calendar_list{
+	margin-left : 70px;
+	clear: both;
+} 
+
+
+/* 검색한 li설정 */
+.Partner_calendar_list li{
+	display: inline;
+	float: left;
+	margin-left: 70px;
+	margin-top: 50px;
+}
+
+/* 검색한 li안의a태그 밑줄 제거 */
+.Partner_calendar_list a{
+	text-decoration: none;
+}
+
+/* 검색한 li의 p태그 글씨 속성 */
+.Partner_calendar_list p{
+	font-size: 20px;
+	font-weight: bold;
+	padding-left:10px;
+	color: #4C4C4C;
+}
+
+/* 검색한 li의 div태그 백그라운드 색깔 */
+.Partner_calender_searchList li div{
+	background-color: #F6F6F6;
+	padding: 10px 10px;
+}
+
+
+/* 검색한 li의 지도이미지 크기 설정 */
+#Partner_calender_searchImage>img{
+	width: 200px;
+	height: 250px;
+}
+
+
+
+
+
+
+

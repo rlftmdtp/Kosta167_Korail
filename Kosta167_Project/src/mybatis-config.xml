@@ -5,22 +5,37 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="review.model.Review" alias="Review"/>
-		<typeAlias type="review.model.Search" alias = "Search"/>
+
+    <typeAlias type="review.model.Review" alias="Review"/>
+		<typeAlias type="review.model.Search" alias = "Re_Search"/>
 		<typeAlias type="review.model.Reply" alias = "Reply"/>
-	</typeAliases>
+  
+		<typeAlias type="message.model.Message" alias="Message" />
+		<typeAlias type="main.model.Member" alias="Member" />
+		<typeAlias type="partner.model.Search" alias="Search" />
+		<typeAlias type="course.model.Course" alias="Course" />
+		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
+		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
+		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
+		<typeAlias type="course.model.Traintime" alias="Traintime" />
 	
-	<environments default="development">
+    	<environments default="development">
 		<environment id="development">
-			<transactionManager type="JDBC"/>
+			<transactionManager type="JDBC" />
+			<!-- Tomcat서버에 존재하는 커넥션 풀과 연결 -->
 			<dataSource type="JNDI">
-				<property name="data_source" value="java:comp/env/jdbc/oracle"/>
+				<property name="data_source" value="java:comp/env/jdbc/oracle" />
 			</dataSource>
-		</environment>		
+		</environment>
 	</environments>
 	
 	<mappers>
-		<mapper resource="review/mapper/Review.xml"/>
-	</mappers>
-	
+		<mapper resource="message/mapper/Message.xml"/>
+		<mapper resource="partner/mapper/Partner.xml"/>
+		<mapper resource="course/mapper/Course.xml" />
+		<mapper resource="main/mapper/Main.xml"/>
+    <mapper resource="review/mapper/Review.xml"/>
+
+	</mappers>		
+
 </configuration>
