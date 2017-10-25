@@ -24,7 +24,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../../javascript/course_script/course.js"
 	type="text/javascript"></script>
-<link rel="stylesheet" href="../../css/course_css/course.css?ver=1">
+<link rel="stylesheet" href="../../css/course_css/course.css">
 </head>
 
 
@@ -104,4 +104,5 @@
 </div>
 </div>
 </body>
+
 </html>

@@ -59,7 +59,8 @@ public class CourseService {
 	}
 	
 	public int insertCourseDetail(CourseDetail courseDetail){
-		courseDetail.setCd_id(dao.selectCd_id()+1 + "");
+		System.out.println(dao.selectCd_id());
+		courseDetail.setCd_id(dao.selectCd_id()+ 1 + "");
 		return dao.insertCourseDetail(courseDetail);
 	}
 	

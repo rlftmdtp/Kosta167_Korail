@@ -112,6 +112,11 @@ body{margin:0;}
 	height:100px;
 	
 }
+.ta textarea{
+	width: 400px;
+	height:100px;
+	
+}
 
 #arrow{
 	width: 25px;
