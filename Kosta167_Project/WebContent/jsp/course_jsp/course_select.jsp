@@ -1,4 +1,6 @@
+
 <%@page import="java.util.Enumeration"%>
+
 <%@page import="course.model.CourseDetail"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -46,6 +48,7 @@
 		out.println(jsonObject);
 	}
 
+
 	// 출발시간 선택 후 출발가능한 시간 반환
 	String startTime = request.getParameter("startTime");
 	// CourseDetail 저장시 traintime의 tt_id를 구하기 위해 아래의 두가지가 필요
@@ -58,10 +61,12 @@
 		JSONObject jsonObject = new JSONObject();
 		JSONArray jsooArray = new JSONArray();
 
+
 		for (int i = 0; i < trainList.size(); i++) {
 			jsonObject.put("tr_id", "(" + trainList.get(i).getTr_id() + ") ");
 			jsonObject.put("tt_stime", trainList.get(i).getTt_stime());
 			jsonObject.put("ss_id", " " + trainList.get(i).getSs_id());
+
 			jsooArray.add(jsonObject);
 		}
 		System.out.println(jsooArray);
@@ -69,6 +74,7 @@
 	}
 
 	// 발권역 정보 로직 - DB의 테이블 Issueinfo에서 가져온다
+
 	String[] issueStations = request.getParameterValues("issueStations[]");
 	if (issueStations != null) {
 		System.out.println(issueStations[0]);
@@ -90,6 +96,7 @@
 			}
 		}
 
+
 		List<IssueStation> issueStationList = service.getIssuetation(stationList);
 
 		JSONObject jsonObject = new JSONObject();
@@ -102,6 +109,7 @@
 		System.out.println(jsonArray);
 		out.println(jsonArray);
 	}
+
 
 	// 전체 코스 저장 로직
 	String[] storeLine = request.getParameterValues("storeLine");
@@ -146,9 +154,17 @@
 					System.out.println("실패");
 				}
 			}
-			response.sendRedirect("course.jsp");
+			
+			if(c_id > 0)
+			{
+			RequestDispatcher rd = request.getRequestDispatcher("../../jsp/share_jsp/shareQuestion.jsp");
+			request.setAttribute("c_id",c_id);
+			rd.forward(request, response);
+			}
+		
 		} else { // 코스 저장에 실패
 			out.println("로그인을 해주세요");
 		}
+
 	}
 %>
