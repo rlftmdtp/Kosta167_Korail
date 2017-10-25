@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+body{
+	width: 340px;
+	height: 350px;
+	
+}
+
+/* 쪽지테이블 로고 */
+.logo{
+	width : 150px;
+	height: 55px;
+	margin-left: 80px;
+}
+
+/* 쪽지 보내는 테이블 */
+#table_text{
+	width : 95px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#table_input{
+	width: 50px;
+	height: 15px;	
+}
+
+table.message_table{
+	width: 30px;
+	height: 300px;
+	
+}
+
+.message_table_tr1{
+	text-align: center;
+	height: 35px;
+	border-top: 1px;
+	
+}
+
+.message_table_tr2{
+	text-align: center;
+	height: 35px;
+}
+
+.message_table_tr3{
+	text-align: center;
+	height: 35px;
+}
+
+#btn_tr{
+	text-align: right;
+	height: 35px;
+}

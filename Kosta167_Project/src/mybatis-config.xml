@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="message.model.Message" alias="Message" />
+		<typeAlias type="message.model.Member" alias="Member" />
+		<typeAlias type="partner.model.Search" alias="Search" />
+		<typeAlias type="course.model.Course" alias="Course" />
+		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
+		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
+		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
+		<typeAlias type="course.model.Traintime" alias="Traintime" />
+		
+	</typeAliases>
+	
+<environments default="development">
+      <environment id="development">
+         <transactionManager type="JDBC"/>
+         <dataSource type="JNDI">
+            <property name="data_source" value="java:comp/env/jdbc/oracle"/>
+         </dataSource>
+      </environment>      
+   </environments>
+   
+	
+	<mappers>
+		<mapper resource="message/mapper/Message.xml"/>
+		<mapper resource="partner/mapper/Partner.xml"/>
+		<mapper resource="course/mapper/Course.xml" />
+	</mappers>
+	
+</configuration>

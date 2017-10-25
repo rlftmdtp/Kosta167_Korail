@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="course.mapper.CourseMapper"><!-- 인터페이스가 존재하는 경로와 일치시켜야 한다 -->
+	<cache />
+	<!-- 인터페이스에 존재하는 메서드와 id명이 일치해야 한다 parameterType의 Board는 mybatis-config.xml에서 
+		Board로 설정했기 때문에 -->
+	<!-- parameterType은 자바메서드에 파라미터가 존재 할 때 resultType은 메서드반환형이 존재 할 때 -->
+
+	<select id="selectC_id" resultType="Integer">
+		select max(c_id) from course
+	</select>
+	
+	<select id="selectCd_id" resultType="Integer">
+		select max(cd_id) from coursedetail
+	</select>
+	
+	<select id="select_tt_id" resultType="String" parameterType="java.util.HashMap">
+		select tt_id from traintime where tr_id = #{tr_id} and ss_id = #{ss_id}
+	</select>
+
+	<insert id="insertCourse" parameterType="Course">
+		insert into course
+		values (#{c_id},#{m_id})
+	</insert>
+	
+	<insert id="insertCourseDetail" parameterType="CourseDetail">
+		insert into coursedetail values(#{cd_id},#{c_id},#{tt_id},#{cd_start},#{cd_stime},#{cd_end},#{cd_etime})
+	</insert>
+
+	<select id="getIssueStation" resultType="IssueStation"
+		parameterType="String">
+		select * from issueinfo where i_name=#{issueStaion}
+	</select>
+
+	<select id="login" resultType="Member" parameterType="Member">
+		select *
+		from member where m_id = #{m_id} and m_pw = #{m_pw}
+	</select>
+
+	<select resultType="String" id="startList"> select ss_name from STOPSTATION
+		group by ss_name order by ss_name </select>
+
+	<select resultType="Stopstation" id="availableStart"
+		parameterType="String"> select * from STOPSTATION where ss_name = #{ss_name}
+	</select>
+
+	<select resultType="Stopstation" id="availableEnd"
+		parameterType="Stopstation"> select * from STOPSTATION where line_id=#{line_id} and
+		ss_id>#{ss_id} </select>
+
+	<select resultType="Traintime" id="availableTrain"
+		parameterType="java.util.HashMap"> select t.* from traintime t, stopstation s where
+		t.ss_id = s.ss_id and s.line_id =#{line_id} and s.ss_id IN (select
+		ss_id from STOPSTATION where ss_name = #{ss_name}) and tt_stime
+		between #{before} and #{after} </select>
+</mapper>

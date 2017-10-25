@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+
+.msgform{
+	text-align : right;
+	position: relative;
+	margin-top: 35px;
+}
+/* table전체 */
+table.receive_Table {
+	margin : 0 auto;
+	width : 1000px;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+/* 답장, 삭제버튼 */
+table.receive_Table thead .head_btn{
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* 수신 보낸사람 내용 날짜 헤드부분  */
+table.receive_Table thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #e7708d;
+    margin: 20px 10px;
+}
+
+/* 테이블 몸통 줄 간격 */
+table.receive_Table tbody th {
+    padding: 13px;
+}
+table.receive_Table td {
+    padding: 13px;
+    vertical-align: top;
+}
+
+/* 쪽지 수신 라인에만 색 넣기 */
+table.receive_Table .even {
+    background: #fdf3f5;
+    text-align: center;
+}
+
+/* 체크박스 크기지정 */
+.check_table{
+	width : 80px;
+	text-align: center;	
+}
+
+/* 수신 */
+.mail_table{
+	width: 50px;    
+	text-align: center;	
+}
+
+/* 보낸사람 */
+.people_table{
+	width: 150px;
+	text-align: center;
+}
+
+/* 내용 */
+.content_table{
+	width: 200px;
+    text-align: center;	
+}
+
+/* 보낸날짜 */
+.date_table{
+	width: 150px;
+    text-align: center;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
