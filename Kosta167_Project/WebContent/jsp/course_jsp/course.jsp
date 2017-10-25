@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="../../css/course_css/course.css?ver=1">
 </head>
 
+
 <body>
 <div class="body-Wrap">
 <div id = "courseWrap">
