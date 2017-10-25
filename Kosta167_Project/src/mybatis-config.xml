@@ -7,11 +7,12 @@
 	<typeAliases>
 		<!-- 별칭 설정 설정 -->
 		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
-		<typeAlias type="course.model.Member" alias="Member" />
+		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="course.model.Course" alias="Course" />
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
 		<typeAlias alias="Stopstation" type="course.model.Stopstation" />
 		<typeAlias alias="Traintime" type="course.model.Traintime" />
+		<typeAlias alias="Message" type="message.model.Message" />
 	</typeAliases>
 
 	<environments default="development">

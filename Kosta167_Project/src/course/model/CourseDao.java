@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import course.mapper.CourseMapper;
+import main.model.Member;
 
 public class CourseDao {
 	private static CourseDao dao = new CourseDao();

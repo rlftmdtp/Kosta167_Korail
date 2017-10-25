@@ -1,4 +1,4 @@
-package course.model;
+package main.model;
 
 import java.io.Serializable;
 

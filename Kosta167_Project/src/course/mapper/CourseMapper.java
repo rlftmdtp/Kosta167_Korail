@@ -6,9 +6,9 @@ import java.util.List;
 import course.model.Course;
 import course.model.CourseDetail;
 import course.model.IssueStation;
-import course.model.Member;
 import course.model.Stopstation;
 import course.model.Traintime;
+import main.model.Member;
 
 public interface CourseMapper {
 	public IssueStation getIssueStation(String issueStaion);

@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+
+.header-Wrap{
+	height : 20%;
+	
+}
+
+.body-Wrap{
+	position: relative;
+	padding-bottom: 150px;
+}
+
+.footer-wrap{
+	position : absolute;
+	margin-bottom: 0;
+}

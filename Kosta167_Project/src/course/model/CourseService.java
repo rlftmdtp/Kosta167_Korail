@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import main.model.Member;
+
 public class CourseService {
 	private static CourseService service = new CourseService();
 	private static CourseDao dao;
