@@ -7,7 +7,6 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
 import share.mapper.ShareMapper;
 
 public class ShareDao {
@@ -163,13 +162,21 @@ public class ShareDao {
 		return re;
 	}
 	
+	/*공유글 삭제 */
 	public void deleteShare(int sh_no){
 		int re=-1;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
-			re=sqlSession.getMapper(ShareMapper.class).deleteShare(sh_no);
+			re=sqlSession.getMapper(ShareMapper.class).deleteReply(sh_no);
 			if(re>0){
 				sqlSession.commit();
+				re=sqlSession.getMapper(ShareMapper.class).deleteShare(sh_no);
+				if(re>0){
+					sqlSession.commit();
+				}else{
+					sqlSession.rollback();
+				}
+				
 			}else{
 				sqlSession.rollback();
 			}
@@ -182,6 +189,17 @@ public class ShareDao {
 	
 	}
 	
+	/*public void deleteReply(){
+		int re=-1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			re = sqlSession.getMapper(ShareMapper.class)..deleteReply(sr_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+	}*/
 	
 	public int selectSr_no() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -239,7 +257,6 @@ public class ShareDao {
 		}
 		return replylist;
 	}
-	
 	
 }
 

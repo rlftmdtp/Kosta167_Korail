@@ -31,6 +31,7 @@
 
 
 <body>
+
 <div class="body-Wrap">
 <div id = "courseWrap">
 	<!-- 
@@ -44,6 +45,7 @@
 	이름<input type="text" value="<%=session.getAttribute("name")%>" id="name" disabled="disabled">
 	아이디<input type="text" value="<%=session.getAttribute("m_id")%>" id="m_id" disabled="disabled">
 	</form>
+
 	 -->
 	 <h3 id="c_title">내일로 여행 코스 짜기</h3>
 	 

@@ -9,20 +9,17 @@
 	<typeAlias type="review.model.Review" alias="Review"/>
 		<typeAlias type="review.model.Search" alias = "Search"/>
 		<typeAlias type="review.model.Reply" alias = "Reply"/>
-  
 		<typeAlias type="message.model.Message" alias="Message" />
 		<typeAlias type="main.model.Member" alias="Member" />
 		<typeAlias type="partner.model.Search" alias="Search" />
 		<typeAlias type="course.model.Course" alias="Course" />
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
-		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
-		<typeAlias type="course.model.Stopstation" alias="Stopstation" />
-		<typeAlias type="course.model.Traintime" alias="Traintime" />
-	
+
+		<typeAlias type="share.model.Share" alias="Share"/>
+		<typeAlias type="share.model.ShareSearch" alias="ShareSearch"/>
+		<typeAlias type="share.model.ShareReply" alias="ShareReply"/>
 	</typeAliases>
 
-
-	
     	<environments default="development">
 
 		<environment id="development">
@@ -38,10 +35,9 @@
 		<mapper resource="message/mapper/Message.xml"/>
 		<mapper resource="partner/mapper/Partner.xml"/>
 		<mapper resource="course/mapper/Course.xml" />
-		<mapper resource="main/mapper/Main.xml"/>
-    <mapper resource="review/mapper/Review.xml"/>
+		<mapper resource="share/mapper/Share.xml"/>
+	</mappers>
 
-	</mappers>		
 
 
 </configuration>

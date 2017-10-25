@@ -1,4 +1,4 @@
-<%@page import="org.apache.catalina.Service"%>
+ <%@page import="org.apache.catalina.Service"%>
 <%@page import="share.model.ShareService"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -15,12 +15,14 @@
 	int re = service.insertShareService(share);
 	
  	if(re > 0){
+		
+		
 		response.sendRedirect("shareList.jsp");
-	}else{
+	 }else{
 		response.sendRedirect("shareForm.jsp");
 	} 
-%>    
-    
+	%>    
+ 		
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

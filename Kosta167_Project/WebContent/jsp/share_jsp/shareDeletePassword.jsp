@@ -12,10 +12,10 @@
     	if( id != null){
     		sh_no = Integer.parseInt(id);
     	}
-    	System.out.println(id);
+    	
     	String check_pw = request.getParameter("check_pw");
     	ShareService service = ShareService.getInstance();
-    	Share share = service.selectShareService(sh_no);
+    	Share share = service.selectShareService(sh_no,false);
     	
     	if(share.getSh_pw().equals(check_pw)){
     		service.deleteShareService(sh_no); 
