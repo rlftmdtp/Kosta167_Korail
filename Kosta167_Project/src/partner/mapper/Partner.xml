@@ -27,10 +27,30 @@
 			AND d.CD_END = '천안'
 	</select>
 
-	 <select id="partner_allList" resultType="Member"> select m.m_id as 
+	<select id="partner_allList" resultType="Member"> select m.m_id as 
 		m_id, m.m_pw as m_pw, m.m_name as m_name, m.m_gender as m_gender, m.m_age 
 		as m_age, m.m_hp as m_hp from member m, shareText s where m.m_id=s.m_id AND 
-		s.SH_SHAREOK='Y' </select> 
+		s.SH_SHAREOK='Y' 
+	</select> 
+	
+	
+	<select id="station_search" resultType="Member" parameterType="java.util.HashMap">
+		select
+			m.m_id as m_id,
+			m.m_pw as m_pw,
+			m.m_name as m_name,
+			m.m_gender as
+			m_gender,
+			m.m_age as m_age,
+			m.m_hp as m_hp
+			  from member m, COURSEDETAIL d, COURSE c, SHARETEXT s
+			  where c.M_ID=m.M_ID
+			    AND d.C_ID = c.C_ID
+			    AND s.M_ID = m.M_ID
+			    AND s.SH_SHAREOK = 'Y'
+			    AND d.CD_END = #{station}		
+	</select>
+	 
 
 
 </mapper>

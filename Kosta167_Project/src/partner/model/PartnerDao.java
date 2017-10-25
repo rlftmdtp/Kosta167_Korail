@@ -66,7 +66,20 @@ public class PartnerDao {
 	}
 	
 	
-	
+	public List<Member> station_search(HashMap<String, String> map){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Member> station_list = null;
+		
+		try {
+			station_list = sqlSession.getMapper(PartnerMapper.class).station_search(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return station_list;
+	}
 	
 	
 	

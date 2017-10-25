@@ -25,7 +25,7 @@ $(function() {
 			$("#total_Sdate").val(start_date);
 		}
 	
-	})
+	});
 
 	// 오는날 달력 선택하기
 	$( "#datepicker_end" ).datepicker({ 
@@ -46,7 +46,7 @@ $(function() {
 			$("#total_Edate").val(end_date);
 		}
 		
-	})
+	});
 
 
 //select박스에 시간 동적으로 생성하기
@@ -67,13 +67,13 @@ $(function() {
 	$("#selStartTime").click(function () {
 		$start_time = $(this).val();
 		$("#total_Stime").val($start_time);
-	})
+	});
 	
 	// 도착 시간 선택 시
 	$("#selEndTime").click(function () {
 		$end_time = $(this).val();
 		$("#total_Etime").val($end_time);
-	})
+	});
 	
 	
 	
@@ -90,21 +90,16 @@ $(function() {
 		dataType : 'json',
 		type : 'post'
 		});
-	})
-	
-	
-/*	$('.Partner_calender_searchList li').css({
-		display: inline
-	})
-	*/
-
-
-	
-	
-	
+	});
 	
 	
 })
+
+/*$(function () {
+	$('.Partner_sendMessage').hover(
+		function () { },
+		function () { } )
+})*/
 
 
 
