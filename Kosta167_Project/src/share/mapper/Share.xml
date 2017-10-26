@@ -19,7 +19,7 @@
 			sh_pw, sh_date, sh_hit, sh_shareok
 		)
 		values(
-			#{sh_no}, 'c1' , #{m_id}, #{sh_title}, #{sh_content}, #{sh_subject},
+			#{sh_no}, #{c_id} , #{m_id}, #{sh_title}, #{sh_content}, #{sh_subject},
 			#{sh_pw}, SYSDATE, 0, 'Y'
 		)
 	
@@ -103,7 +103,7 @@
 		
 	<!-- 댓글 삭제 -->
 	<delete id="deleteReply" parameterType="int">
-		delete from sharereply
+		delete from shareReply
 		where sh_no=#{sh_no}
 	
 	</delete>

@@ -3,6 +3,8 @@ package share.model;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import main.model.Member;
 import share.model.ListModel;
 
 
@@ -90,6 +92,7 @@ public class ShareService {
 	}
 	
 	public void deleteShareService(int sh_no){
+		
 		dao.deleteShare(sh_no);
 	}
 	
@@ -108,5 +111,6 @@ public class ShareService {
 	public List<ShareReply> listShareReplyService(int sh_no){
 		return dao.listShareReply(sh_no);
 	}
+	
 	
 }

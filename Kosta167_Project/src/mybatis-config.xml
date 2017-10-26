@@ -6,17 +6,29 @@
 <configuration>
 	
 	<typeAliases>
-	<typeAlias type="review.model.Review" alias="Review"/>
-		<typeAlias type="review.model.Search" alias = "Re_Search"/>
-		<typeAlias type="review.model.Reply" alias = "Reply"/>
-		<typeAlias type="message.model.Message" alias="Message" />
-		<typeAlias type="main.model.Member" alias="Member" />
-		<typeAlias type="partner.model.Search" alias="Search" />
+	<!-- course -->
 		<typeAlias type="course.model.Course" alias="Course" />
 		<typeAlias type="course.model.CourseDetail" alias="CourseDetail" />
-		<typeAlias alias="Stopstation" type="course.model.Stopstation" />
-		<typeAlias alias="Traintime" type="course.model.Traintime" />
-		<typeAlias alias="Message" type="message.model.Message" />
+		<typeAlias type="course.model.Stopstation" alias="Stopstation"/>
+		<typeAlias type="course.model.Traintime" alias="Traintime" />
+		<typeAlias type="course.model.IssueStation" alias="IssueStation" />
+	
+	<!-- review -->	
+		<typeAlias type="review.model.Review" alias="Review"/>
+		<typeAlias type="review.model.Re_Search" alias = "Re_Search"/>
+		<typeAlias type="review.model.Reply" alias = "Reply"/>
+	
+	<!-- main -->	
+		<typeAlias type="main.model.Member" alias="Member" />
+		
+	<!-- partner -->	
+		<typeAlias type="partner.model.Search" alias="Search" />
+	
+	<!-- message -->
+		<typeAlias type="message.model.Message" alias="Message" />
+		
+	<!-- share -->	
+		<typeAlias type="share.model.Share" alias="Share" />
 		<typeAlias type="share.model.ShareSearch" alias="ShareSearch" />
 		<typeAlias type="share.model.ShareReply" alias="ShareReply" />
 	</typeAliases>

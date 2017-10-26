@@ -11,14 +11,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="../../javascript/jquery.js" type="text/javascript"></script>
 <script>
-	$(function(){
-		if (confirm('공유하시겠습니까?')) {
-			var c_id = $('#c_id').val();
-			location.href = '../../jsp/share_jsp/shareForm.jsp?c_id="'+c_id+'"';
-		} else {
-			location.href = "shareList.jsp"
-		}
-	})
+$(function(){
+	if (confirm('공유하시겠습니까?')) {
+		var c_id = $('#c_id').val();
+		location.href = '../../jsp/share_jsp/shareForm.jsp?c_id="'+c_id+'"';
+	} else {
+		location.href = "shareList.jsp"
+	}
+})
 </script>
 </head>
 <body>

@@ -1,5 +1,5 @@
+<%@page import="main.model.Member"%>
 <%@page import="java.util.HashMap"%>
-<%@page import="partner.model.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="java.io.Console"%>
 <%@page import="partner.model.PartnerService"%>
@@ -9,7 +9,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<jsp:useBean id="member" class="partner.model.Member"></jsp:useBean>
+<jsp:useBean id="member" class="main.model.Member"></jsp:useBean>
 <jsp:setProperty property="*" name="member" />
 <%
 	request.setCharacterEncoding("utf-8");
@@ -68,176 +68,87 @@
 
 <meta name="description" content="" />
 <meta name="naver-site-verification" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Star Rail</title>
 
+<link rel="stylesheet" href="../../css/Main_css/default_shop.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/contents.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/board.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/All.css" type="text/css" />
 
 
-<link rel="stylesheet" href="../../css/Main_css/default_shop.css"
-	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/common.css"
-	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/layout.css"
-	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/contents.css"
-	type="text/css" />
-<link rel="stylesheet" href="../../css/Main_css/board.css"
-	type="text/css" />
-<script>
-	// 자바스크립트에서 사용하는 전역변수 선언
-	var g5_url = "http://www.e-seje.com";
-	var g5_bbs_url = "http://www.e-seje.com/bbs";
-	var g5_is_member = "";
-	var g5_is_admin = "";
-	var g5_is_mobile = "";
-	var g5_bo_table = "";
-	var g5_sca = "";
-	var g5_editor = "";
-	var g5_cookie_domain = "";
-</script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery-migrate.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery.easing.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/base.js"></script>
+<script src="../../javascript/Main_script/jquery.shop.menu.js"></script>
+<script src="../../javascript/Main_script/common.js"></script>
+<script src="../../javascript/Main_script/wrest.js"></script>
 
 
-<script type="text/javascript"
-	src="http://www.e-seje.com/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript"
-	src="http://www.e-seje.com/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript"
-	src="http://www.e-seje.com/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript"
-	src="http://www.e-seje.com/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="http://www.e-seje.com/js/base.js"></script>
-
-<script src="http://www.e-seje.com/js/jquery.shop.menu.js"></script>
-
-<script src="http://www.e-seje.com/js/common.js"></script>
-<script src="http://www.e-seje.com/js/wrest.js"></script>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript"
-	src="../../javascript/partner_javascript/Partner_calenderPage.js"></script>
-<link rel="stylesheet"
-	href="../../css/partner_css/partner_calendar.css?ver=1" type="text/css" />
-<link rel="stylesheet"
-	href="../../css/partner_css/partner_station.css?ver=1" type="text/css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<script type="text/javascript" src="../../javascript/partner_javascript/Partner_calenderPage.js"></script>
+<link rel="stylesheet" href="../../css/partner_css/partner_calendar.css?ver=1" type="text/css" />
+
+
 </head>
 <body>
 
-	<!-- 팝업레이어 시작 { -->
-	<div id="hd_pop">
-		<h2>팝업레이어 알림</h2>
-
-		<span class="sound_only">팝업레이어 알림이 없습니다.</span>
-	</div>
-
-	<script>
-		$(function() {
-			$(".hd_pops_reject").click(function() {
-				var id = $(this).attr('class').split(' ');
-				var ck_name = id[1];
-				var exp_time = parseInt(id[2]);
-				$("#" + id[1]).css("display", "none");
-				set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
-			});
-			$('.hd_pops_close').click(function() {
-				var idb = $(this).attr('class').split(' ');
-				$('#' + idb[1]).css('display', 'none');
-			});
-			$("#hd").css("z-index", 1000);
-		});
-	</script>
-	<!-- } 팝업레이어 끝 -->
+	<div id = "wrap">
+	<div class = "header-wrap">
 	<div id="hnn-wrap">
-		<!-- TNB  -->
-		<div id="hnn-tnb">
-			<div class="hnn-inner">
-				<div id="hnn-logo">
-					<a href="mainpage.jsp"><img src="../../images/logo.jpg"
-						width="161" height="72" /></a>
-				</div>
+			<!-- TNB  -->
+			<div id="hnn-tnb">
+				<div class="hnn-inner">
+					<div id="hnn-logo">
+						<a href="../MainPage/mainpage.jsp"><img
+							src="../../images/main_images/logo.jpg" width="161" height="76" /></a>
+					</div>
 
-				<ul id="hnn-log">
-					<li><a href="#">홈</a></li>
-					<li><a href="http://www.e-seje.com/bbs/login.php?url=%2F">로그인</a><span></span></li>
-					<li><a href="http://www.e-seje.com/bbs/register.php">회원가입</a><span></span></li>
-					<li><a href="http://www.e-seje.com/shop/cart.php" class="cart"><em
-							class="ico-cart"></em>장바구니</a></li>
-					<li><a
-						href="http://www.e-seje.com/bbs/board.php?bo_table=notice">고객센터</a></li>
-				</ul>
-				<!-- 다국어 -->
-				<div id="hnn-lang">
-					<a class="hnn-btn" href="#">Korean <em></em></a>
-					<ul style="">
-						<li><a href="/en">English</a></li>
-						<li><a href="/ch">China</a></li>
+					<ul id="hnn-log">
+						<li><a href="../MainPage/mainpage.jsp">홈</a></li>
+						<li><a href="../MainPage/mainLogin.jsp">로그인</a><span></span></li>
+						<li><a href="#">회원가입</a><span></span></li>
+						<li><a
+							href="../message_jsp/msg_receive.jsp">쪽지함</a></li>
+						<li><a href="../MainPage/Mypage.jsp">마이페이지</a></li>
 					</ul>
+					</div>		
 				</div>
-				<!-- //다국어 -->
 			</div>
-		</div>
-		<!-- //TNB  -->
 
-		<!--HEADER -->
 		<div id="hnn-header">
 			<div class="hnn-inner">
 				<!-- GNB -->
 				<ul id="hnn-gnb">
-					<li class="hnn-gnb1 "><a
-						href="http://www.e-seje.com/contents/sub01_01.php">Star Rail</a>
+					<li class="hnn-gnb1 "><a href="../MainPage/RailoInfo.jsp">Star Rail</a>
 						<div>
 							<ul class="hnn-snb1">
-								<li><a href="http://www.e-seje.com/contents/sub01_02.php">내일로란</a></li>
-								<li><a href="http://www.e-seje.com/contents/sub01_03.php">내일로
-										혜택</a></li>
+								<li><a href="../MainPage/RailoInfo.jsp">내일로란</a></li>
+								<li><a href="../MainPage/RailoGift.jsp">내일로 혜택</a></li>
 
 							</ul>
 						</div></li>
-					<li class="hnn-gnb2 "><a
-						href="http://www.e-seje.com/contents/sub02_01.php">코스 짜기</a>
-					<li class="hnn-gnb3 "><a
-						href="http://www.e-seje.com/bbs/board.php?bo_table=notice">동반자
-							찾기</a></li>
-					<li class="hnn-gnb4 "><a
-						href="http://www.e-seje.com/shop/list.php?ca_id=10">후기남겨요</a></li>
-					<li class="hnn-gnb5 "><a
-						href="http://www.e-seje.com/contents/sub05_01.php">공유해요</a></li>
+					<li class="hnn-gnb2 "><a href="../course_jsp/course.jsp">코스 짜기</a>
+					<li class="hnn-gnb3 "><a href="Partner_calendar.jsp">동반자 찾기</a></li>
+					<li class="hnn-gnb4 "><a href="../review_jsp/reviewlist.jsp">후기남겨요</a></li>
+					<li class="hnn-gnb5 "><a href="../share_jsp/shareList.jsp">공유해요</a></li>
 				</ul>
-				<!-- GNB -->
-				<!-- 검색 -->
-				<script>
-					function search_submit(f) {
-						if (f.q.value.length < 2) {
-							alert("검색어는 두글자 이상 입력하십시오.");
-							f.q.select();
-							f.q.focus();
-							return false;
-						}
-
-						return true;
-					}
-				</script>
-				<div id="header-search">
-					<form name="frmsearch1"
-						action="http://www.e-seje.com/shop/search.php"
-						onsubmit="return search_submit(this);">
-						<input type="text" name="q" value="" class="form"
-							placeholder="검색어를 입력하세요." /> <input type="image"
-							src="http://www.e-seje.com/images/ico-search2.gif" alt="검색"
-							class="btn" />
-					</form>
 				</div>
-				<!-- //검색 -->
 			</div>
-			<div class="hnn-bg"></div>
 		</div>
-		<!--HEADER -->
-	</div>
-	<!-- //ELEMENT -->
 
+
+
+
+	<div class="body-wrap">
 
 	<!-- 기본적으로 내 코스의 정보가 떠야 함 -->
 	<div class="Partner_calendar_wrap">
@@ -404,7 +315,195 @@
 
 
 	</div>
+	</div>
+	
+	<!--푸터값 -->
 
+<div class = "footer-wrap">
+	  <!-- BOARD -->
+      <div id="hnn-board">
+         <div class="hnn-inner clearfix">
+            <div class="fl">
+               <div class="board-tit">
+                  <em></em>NEWS
+               </div>
+               <div class="board-list">
+                  <ul class="board-roll">
+
+
+                     <li><a
+                        href="#">개인정보보호 안내</a></li>
+                     <li><a
+                        href="#">동행자 찾기 서비스 개설안내</a></li>
+                     <li><a
+                        href="#">순천 조류인플루엔자 발생</a></li>
+                     <li><a
+                        href="#">카카오 결제 내역 확인 안내</a></li>
+                     <li><a
+                        href="#">내일로 여행코스 추천</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="fr">
+               <div class="board-tit">
+                  <em></em>event
+               </div>
+               <div class="board-list">
+                  <ul class="board-roll">
+
+
+                     <li><a
+                        href="#">이벤트 당첨자 안내</a></li>
+                     <li><a
+                        href="#">이벤트 당첨  23. 장 솔님</a></li>
+                     <li><a
+                        href="#">이벤트 당첨  26. 길 승세님</a></li>
+                     <li><a
+                        href="#">이벤트 당첨  23. 장 희정님</a></li>
+                     <li><a
+                        href="#">이벤트 당첨  30. 배 재현님</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //BOARD -->
+
+
+      <!-- SITEMAP  -->
+      <div id="hnn-sitemap">
+         <div class="hnn-inner">
+            <ul class="sitemap-list clearfix">
+               <li class="map1"><a
+                  href="#">company</a>
+                  <ul>
+                     <li><a href="#">회사개요</a></li>
+                     <li><a href="#">인사말</a></li>
+                     <li><a href="#">연혁</a></li>
+                     <li><a href="#">조직도</a></li>
+                     <li><a
+                        href="#">인증현황</a></li>
+                     <li><a href="#">파트너사</a></li>
+                     <li><a href="#">오시는
+                           길</a></li>
+                  </ul></li>
+               <li class="map2"><a
+                  href="#">BRAND STORY</a>
+                  <ul>
+                     <li><a href="#">브랜드
+                           소개</a></li>
+                  </ul></li>
+               <li class="map3"><a
+                  href="#">CS
+                     CENTER</a>
+                  <ul>
+                     <li><a
+                        href="#">공지사항</a></li>
+                     <li><a
+                        href="#">보도자료</a></li>
+                     <li><a
+                        href="#">이벤트</a></li>
+                     <li><a
+                        href="#">문의하기</a></li>
+                  </ul></li>
+               <li class="map4"><a
+                  href="#">SHOP</a>
+                  <ul>
+                     <li><a href="#">다목적</a></li>
+                     <li><a href="#">세탁</a></li>
+                     <li><a href="#">세정</a></li>
+                     <li><a href="#">코스메틱</a></li>
+                     <li><a href="#">기타</a></li>
+                  </ul></li>
+               <li class="map5"><a
+                  href="#">IR</a>
+                  <ul>
+                     <li><a href="#">주가정보</a></li>
+                     <li><a href="#">IR정보</a></li>
+                     <li><a href="#">공시자료</a></li>
+                     <li><a href="#">재무정보</a></li>
+                  </ul></li>
+               <li class="map6"><a
+                  href="#">LOGIN</a>
+                  <ul>
+                     <li><a href="#">로그인</a></li>
+                     <li><a href="#">회원가입</a></li>
+                  </ul></li>
+
+           
+            </ul>
+
+         </div>
+      </div>
+      <!-- //SITEMAP  -->
+
+      <script type="text/javascript">
+         //VISUAL
+         var $visRoll = $("#hnn-vis .vis-roll");
+         slider = $visRoll.bxSlider({
+            mode : "fade",
+            auto : true,
+            pager : false,
+            controls : true,
+            useCSS : false,
+            easing : "easeInOutExpo",
+            speed : 1500,
+            pause : 4500
+         });
+         //인기검색어
+         var $visRoll = $("#hnn-board .board-roll");
+         slider = $visRoll.bxSlider({
+            mode : "vertical",
+            auto : true,
+            pager : false,
+            controls : true,
+            useCSS : false,
+            easing : "easeInOutExpo",
+            speed : 1500,
+            pause : 4500
+         });
+
+         //HITt
+         $(document).ready(function() {
+            $('.P-list .slider').bxSlider({
+               auto : true,
+               slideWidth : 253,
+               minSlides : 4,
+               maxSlides : 4,
+               moveSlides : 1,
+               slideMargin : 0,
+               pager : false
+            });
+
+         });
+      </script>
+      
+      <!-- FOOT -->
+      <div id="hnn-foot">
+         <div class="hnn-inner">
+            <a href="#" class="gotop">Top</a>
+            
+            <div class="address">
+               StarRail<br> 서울특별시 가산구 가산동 코스타.. <em></em>T. 112-112-112<em></em> 010-6248-7523
+               <br><em></em> 길승세 박명규 배재현 장솔 장희정 조윤주<em></em>2017-10-16 2017-10-27<em></em>
+                <br> <em></em><em></em>Copyright 2017 KOSTA StarRail
+               Co.Ltd. All Rights Reserved.
+            </div>
+           
+         </div>
+      </div>
+      <!-- // FOOT -->
+   </div>
+
+
+   <script src="http://www.e-seje.com/js/sns.js"></script>
+
+
+
+</div>
+
+</body>
+</html>
 
 
 

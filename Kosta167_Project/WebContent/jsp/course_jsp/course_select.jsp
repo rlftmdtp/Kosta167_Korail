@@ -140,7 +140,7 @@
 				//System.out.println(date);
 
 				CourseDetail courseDetail = new CourseDetail();
-				courseDetail.setC_id(c_id + "");
+				courseDetail.setC_id(c_id);
 				courseDetail.setTt_id(tt_id);
 				courseDetail.setCd_start(splitStr[4]);
 				courseDetail.setCd_stime(date);

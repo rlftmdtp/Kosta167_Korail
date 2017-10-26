@@ -1,10 +1,6 @@
 @CHARSET "UTF-8";
 
-body{
-	margin-left: 150px;
-	height: 100%;
-	
-}
+
 #wrap{margin:0 auto; width:1080px;}
 
 table.type11 {

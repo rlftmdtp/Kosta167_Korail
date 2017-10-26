@@ -41,7 +41,7 @@
 			<div id="hnn-tnb">
 				<div class="hnn-inner">
 					<div id="hnn-logo">
-						<a href="MainStart.jsp"><img
+						<a href="mainpage.jsp"><img
 							src="../../images/main_images/logo.jpg" width="161" height="76" /></a>
 					</div>
 
@@ -70,9 +70,9 @@
 							</ul>
 						</div></li>
 					<li class="hnn-gnb2 "><a href="../course_jsp/course.jsp">코스 짜기</a>
-					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_main.jsp">동반자 찾기</a></li>
+					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_calendar.jsp">동반자 찾기</a></li>
 					<li class="hnn-gnb4 "><a href="../review_jsp/reviewlist.jsp">후기남겨요</a></li>
-					<li class="hnn-gnb5 "><a href="../share_jsp/shareForm.jsp">공유해요</a></li>
+					<li class="hnn-gnb5 "><a href="../share_jsp/shareList.jsp">공유해요</a></li>
 				</ul>
 				</div>
 			</div>

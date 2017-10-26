@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 
-import share.model.Member;
+import main.model.Member;
 import share.model.Share;
 import share.model.ShareReply;
 import share.model.ShareSearch;

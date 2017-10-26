@@ -7,16 +7,19 @@
 }
 
 .header-wrap{
+	float:left;
 	height : 20%;
 	
 }
 
 .body-wrap{
-	position: relative;
+	width:1080px;
+	float:left;
 	padding-bottom: 150px;
+	overflow:inherit;
 }
 
 .footer-wrap{
-	position : absolute;
+	float:left;
 	margin-bottom: 0;
 }

@@ -3,8 +3,8 @@ package course.model;
 import java.util.Date;
 
 public class CourseDetail {
-	private String cd_id;
-	private String c_id;
+	private int cd_id;
+	private int c_id;
 	private String tt_id;
 	private String cd_start;
 	private Date cd_stime;
@@ -13,7 +13,7 @@ public class CourseDetail {
 	
 	public CourseDetail(){} // 기본 생성자
 
-	public CourseDetail(String cd_id, String c_id, String tt_id, String cd_start, Date cd_stime, String cd_end,
+	public CourseDetail(int cd_id, int c_id, String tt_id, String cd_start, Date cd_stime, String cd_end,
 			Date cd_etime) {
 		super();
 		this.cd_id = cd_id;
@@ -25,19 +25,21 @@ public class CourseDetail {
 		this.cd_etime = cd_etime;
 	}
 
-	public String getCd_id() {
+	
+
+	public int getCd_id() {
 		return cd_id;
 	}
 
-	public void setCd_id(String cd_id) {
+	public void setCd_id(int cd_id) {
 		this.cd_id = cd_id;
 	}
 
-	public String getC_id() {
+	public int getC_id() {
 		return c_id;
 	}
 
-	public void setC_id(String c_id) {
+	public void setC_id(int c_id) {
 		this.c_id = c_id;
 	}
 

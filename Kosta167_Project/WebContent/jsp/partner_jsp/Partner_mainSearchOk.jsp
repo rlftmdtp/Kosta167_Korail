@@ -1,4 +1,4 @@
-<%@page import="partner.model.Member"%>
+
 <%@page import="java.util.List"%>
 <%@page import="partner.model.PartnerService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
