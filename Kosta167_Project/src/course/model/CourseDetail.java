@@ -1,8 +1,9 @@
 package course.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CourseDetail {
+public class CourseDetail implements Serializable{
 	private int cd_id;
 	private int c_id;
 	private String tt_id;

@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="../../css/Main_css/contents.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/board.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/All.css" type="text/css" />
-<link rel="stylesheet" href="../../css/message_css/Message_detail.css" type="text/css" />
+<link rel="stylesheet" href="../../css/message_css/Message_detail.css?ver=1" type="text/css" />
 
 
 <script type="text/javascript" src="../../javascript/Main_script/jquery.js"></script>
@@ -110,25 +110,27 @@ function show(obj){
   
 
 	<div class = "body-wrap">
+	<div class="msgtable">
 	<table class="type11">
     <tr>
-        <th>보낸 사람</th>
-        <td> ${message.m_id }</td>
+        <th class="tableHead">보낸 사람</th>
+        <td class="dataTd"> ${message.m_id }</td>
     </tr>
 
     <tr>
-        <th>작성일</th>
-        <td><fmt:formatDate value="${message.msg_date }" pattern="yyyy-MM-dd / HH:mm"/></td>
+        <th class="tableHead">작성일</th>
+        <td class="dataTd"><fmt:formatDate value="${message.msg_date }" pattern="yyyy-MM-dd / HH:mm"/></td>
     </tr>
     <tr>
-        <th>내용</th>
-        <td>${message.msg_content }</td>
+        <th class="tableHead">내용</th>
+        <td class="dataTd">${message.msg_content }</td>
     </tr>
     <tr>
-        <td><input type="button" value="뒤로가기" onclick="Message_history()" /> </td> 
-        <td><input type="button" value="삭제" onclick="Message_delete()" /></td>
+        <td class="dataTd"><input type="button" value="뒤로가기" onclick="Message_history()" /> </td> 
+        <td class="dataTd"><input type="button" value="삭제" onclick="Message_delete()" /></td>
     </tr>
 </table>
+</div>
 </div>
 
 <!--푸터값 -->

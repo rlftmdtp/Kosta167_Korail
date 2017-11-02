@@ -115,9 +115,11 @@
 	<div class="body-wrap">
 	
 	<center>
-		<br><br>
-		<h1>공유목록</h1>
-		<br><br>
+		<div>
+		<span style="color: #777777"><font size="15">공유목록</font></span><br>
+		<br>
+		<span><img src="../../images/share_images/train2.jpg"></span>
+		</div>
 		<table class="table table-striped"
 			style="text-align: center; border: 1px solid=#dddddd">
 			<tr height="50">
@@ -125,8 +127,8 @@
 					style="background-color: #eeeeee; text-align: center;">글번호</th>
 				<th width="550"
 					style="background-color: #eeeeee; text-align: center;">제목</th>
-				<!-- <th width="100"
-							style="background-color: #eeeeee; text-align: center;">작성자</th> -->
+				<th width="100"
+							style="background-color: #eeeeee; text-align: center;">작성자</th>
 				<th width="240"
 					style="background-color: #eeeeee; text-align: center;">작성일</th>
 				<th width="160"
@@ -140,7 +142,7 @@
 					<td>${share.sh_no}</td>
 					<td align="left">${share.sh_subject}<a
 						href="shareDetail.jsp?sh_no=${share.sh_no }">${share.sh_title }</a></td>
-					<%-- <td>${member.get}</td> --%>
+					<td>${share.m_id}</td>
 					<td><fmt:formatDate value="${share.sh_date}"
 							pattern="yyyy-MM-dd" /></td>
 					<td>${share.sh_hit}</td>
@@ -148,11 +150,11 @@
 			</c:forEach>
 
 			<tr height="3" bgcolor="#dddddd"></tr>
-				<tr align="right">
+				<!-- <tr align="right">
 
 								<td colspan="4"><input type="button" value="메인" onclick="">&nbsp;&nbsp;
 									<input type="button" value="글쓰기" onclick="gotoshareInsert()"></td>
-							</tr>
+							</tr> -->
 						
 						</table>
 						
@@ -195,7 +197,7 @@
 	
 					<input type="checkbox" name="area" value="sh_title"> 제목 
 					<input type="checkbox" name="area" value="m_name"> 작성자 &nbsp; 
-					<input type="text" name="searchKey" size="20"></input> 
+					<input type="text" name="searchKey" size="20" placeholder="검색어를 입력해주세요."></input> 
 					<input type="submit" value="검색">
 						
 					</form>

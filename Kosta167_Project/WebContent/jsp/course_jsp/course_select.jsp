@@ -124,10 +124,10 @@
 			// 코스 세부를 저장해야한다.
 			String[] splitStr = new String[6]; // 한 라인의 글자들을 세분화한다
 			for (int i = 0; i < storeLine.length; i++) {
-				System.out.println(storeLine[0]);
+				System.out.println(storeLine[i]);
 
 				// 0:출발날짜 1:tr_id 2:출발시간 3:ss_id 4:출발역 5:도착역
-				splitStr = storeLine[0].split(" ");
+				splitStr = storeLine[i].split(" ");
 				splitStr[1] = splitStr[1].replace("(", "");
 				splitStr[1] = splitStr[1].replace(")", "");
 

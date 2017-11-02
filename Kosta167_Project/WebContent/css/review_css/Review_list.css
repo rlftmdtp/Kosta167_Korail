@@ -1,5 +1,6 @@
 @CHARSET "EUC-KR";
 
+
 table.li {
     border-collapse: collapse;
     text-align: left;
@@ -16,6 +17,12 @@ table.li thead {
     border-left-color: white;
     border-right-color: white;
 }
+
+table #de{
+	margin: auto;
+}
+
+
 table.li thead tr th {
     padding: 10px;
     font-weight: bold;
@@ -85,6 +92,7 @@ table.li tpoot {
 #ww{
 	background: #666666;
 	color-size: 50px;
+	margin-left: 19%;
 }
 #ww:hover{
 	background: #009999; 

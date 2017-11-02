@@ -44,6 +44,13 @@
 <script src="../../javascript/Main_script/jquery.shop.menu.js"></script>
 <script src="../../javascript/Main_script/common.js"></script>
 <script src="../../javascript/Main_script/wrest.js"></script>
+
+<script type="text/javascript">
+	function detail_click() {
+		history.go(-1);
+	}
+
+</script>
 </head>
 
 <body>
@@ -121,7 +128,7 @@
 			<tr height="30">
 				<td colspan="4" align="center">
 				<input type="submit" value="글쓰기">&nbsp;&nbsp;
-					<input type="reset" value="취소"></td>
+					<input type="reset" value="취소" onclick="detail_click()" ></td>
 			</tr>
 		</table>
 	</form>

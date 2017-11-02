@@ -11,7 +11,8 @@
 }
 
 #dd{
-	width: 1103px;
+	width: 80%;
+	margin: auto;
 }
 
 /* #dd th{
@@ -114,4 +115,10 @@
 	
 }
 
+#detailDiv div{
+	width: 80%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 285px;
+} 
 

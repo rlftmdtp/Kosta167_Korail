@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+#formtableWrap{
+	width:1080px;
+}
+
+#formtable{
+	width:1080px;
+}
+#formtable tr{
+	width:1080px;
+}
+.th_td{
+	width:150px;
+}
+
+.tc_td{
+	width:930px;
+}

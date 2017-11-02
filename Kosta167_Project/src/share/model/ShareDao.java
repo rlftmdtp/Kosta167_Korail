@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import course.model.CourseDetail;
 import main.model.Member;
 import share.mapper.ShareMapper;
 
@@ -82,6 +83,21 @@ public class ShareDao {
 		}
 		return dbMember;
 	}
+	
+	   public List<CourseDetail> viewCourseDetail(int c_id){
+		      SqlSession sqlSession = getSqlSessionFactory().openSession();
+		      List<CourseDetail> list = null;
+		      try {
+		         list = sqlSession.getMapper(ShareMapper.class). viewCourseDetail(c_id);
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }finally{
+		         sqlSession.close();
+		      }
+		      return list;
+		   }
+
 	
 	public List<Share> listShare (int startRow , ShareSearch shareSearch){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();

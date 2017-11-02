@@ -119,7 +119,7 @@
 <!-- 	<!--푸터값 -->
 
 <div class = "footer-wrap">
-	  BOARD
+	 <!--  BOARD -->
       <div id="hnn-board">
          <div class="hnn-inner clearfix">
             <div class="fl">
@@ -166,10 +166,10 @@
             </div>
          </div>
       </div>
-      //BOARD
+    <!--   //BOARD -->
 
 
-      SITEMAP 
+     <!--  SITEMAP  -->
       <div id="hnn-sitemap">
          <div class="hnn-inner">
             <ul class="sitemap-list clearfix">

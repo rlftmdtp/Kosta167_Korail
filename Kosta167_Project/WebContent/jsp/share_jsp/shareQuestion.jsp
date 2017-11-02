@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	String c_id = request.getAttribute("c_id").toString();
+	int c_id = Integer.parseInt(request.getAttribute("c_id").toString());
 	System.out.println("c_id " + c_id);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,7 +14,7 @@
 $(function(){
 	if (confirm('공유하시겠습니까?')) {
 		var c_id = $('#c_id').val();
-		location.href = '../../jsp/share_jsp/shareForm.jsp?c_id="'+c_id+'"';
+		location.href = '../../jsp/share_jsp/shareForm.jsp?c_id='+c_id;
 	} else {
 		location.href = "shareList.jsp"
 	}

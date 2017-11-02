@@ -78,11 +78,9 @@ $(function() {
 	
 	
 	// (출발 날짜/시간) + (도착 날짜 /시간)을 ajax로 jsp파일에 값을 전달한다.
-	$('#submit').click(function () {
+	$('#aaa').click(function () {
 		var start = $("#total_Sdate").val() + " " + $("#total_Stime").val()
 	    var end = $("#total_Edate").val() + " " + $("#total_Etime").val()
-	    alert(start);
-		alert(end);
 		
 		$.ajax({
 		url : '../../jsp/partner_jsp/Partner_calendar_searchOK.jsp',
@@ -103,7 +101,6 @@ $(function () {
 	$('#Partner_search_button').click(function () {
 		$Partner_search = null;
 		$Partner_search = $("#Partner_search").val();
-	    alert($Partner_search);
 		
 		$.ajax({
 		url : '../../jsp/partner_jsp/Partner_mainSearchOk.jsp',
@@ -142,19 +139,14 @@ $(function() {
 
 		if ($selectItem == "경기도") {
 			changeItem = gyeonggido;
-			alert("경기도" + changeItem);
 		} else if ($selectItem == "서울") {
 			changeItem = seoul;
-			alert("서울" + changeItem);
 		} else if ($selectItem == "강원도") {
 			changeItem = gangwon;
-			alert("강원" + changeItem);
 		} else if ($selectItem == "충청남도") {
 			changeItem = chungnam;
-			alert("충남" + changeItem);
 		} else if ($selectItem == "전라북도") {
 			changeItem = jeonbuk;
-			alert("전북" + changeItem);
 		}
 
 		// 원하는 역 선택 시 그곳에 머무는 사람 검색되기 위해 내가 선택 한 값
@@ -167,7 +159,6 @@ $(function() {
 		// 전달
 		$('#station_line_in').change(function() {
 			var station = $("#station_line_in option:selected").text();
-			alert("station" + station);
 
 			$.ajax({
 				url : '../../jsp/partner_jsp/Partner_station_searchOK.jsp',
@@ -181,6 +172,14 @@ $(function() {
 
 	})
 })
+
+
+
+
+
+
+
+
 
 
 

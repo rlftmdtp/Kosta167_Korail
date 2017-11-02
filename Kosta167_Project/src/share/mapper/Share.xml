@@ -15,15 +15,21 @@
 	
 	<insert id="insertShare" parameterType="Share">
 		insert into shareText(
-			sh_no, c_id, m_id, sh_title, sh_content, sh_subject,
-			sh_pw, sh_date, sh_hit, sh_shareok
+			sh_no, c_id, m_id, sh_subject, sh_title, sh_content, sh_pw, sh_date, sh_hit, sh_shareok
 		)
 		values(
-			#{sh_no}, #{c_id} , #{m_id}, #{sh_title}, #{sh_content}, #{sh_subject},
+			#{sh_no}, #{c_id} , #{m_id}, #{sh_subject}, #{sh_title}, #{sh_content},
 			#{sh_pw}, SYSDATE, 0, 'Y'
 		)
 	
 	</insert>
+	
+	<!-- 공유글 쓰기 폼에서 코스 디테일 불러오기 -->
+	<select id="viewCourseDetail" resultType="CourseDetail" parameterType="Integer">
+      select * from COURSEDETAIL
+         where c_id = #{c_id}
+   
+   </select>
 	
 	<!-- 공유 목록 전체 리스트 출력 -->
 	<select id="listShare" resultType="Share" parameterType="ShareSearch">

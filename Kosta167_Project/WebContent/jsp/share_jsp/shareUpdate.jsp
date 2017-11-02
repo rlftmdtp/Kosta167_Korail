@@ -1,11 +1,16 @@
 
+<%@page import="course.model.CourseDetail"%>
+<%@page import="java.util.List"%>
 <%@page import="share.model.Share"%>
 <%@page import="share.model.ShareService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 	request.setCharacterEncoding("utf-8");
-
+	String m_id = (String) session.getAttribute("m_id");
 	String id = request.getParameter("sh_no");
 	int sh_no = 0;
 	if (id != null) {
@@ -14,7 +19,13 @@
 
 	ShareService service = ShareService.getInstance();
 	Share share = service.selectShareService(sh_no,false);
-
+	
+	int c_id = share.getC_id();
+	
+	List<CourseDetail> list = service.viewCourseDetailService(c_id);
+	
+	request.setAttribute("cd_list", list);
+	request.setAttribute("m_id", m_id);
 	request.setAttribute("share", share);
 %>
 
@@ -52,7 +63,7 @@
 <script type="text/javascript">
 function writeCheck(){
 	
-	var form = document.write;	
+	var form = document.update;	
 	
 	if( !form.sh_pw.value){
 		alert("비밀번호를 입력해주세요.");
@@ -126,15 +137,17 @@ function writeCheck(){
 
 <!-- 메인값  -->
 	<div class="body-wrap">
+	
+
 	<center>
 		<h1>글수정하기</h1>
-		<form action="shareUpdatePassword.jsp" name="write" method="post">
+		<form action="shareUpdatePassword.jsp" name="update" method="post">
 			<input type="hidden" name="sh_no" value="<%=sh_no%>">
 			<table border="1" cellpadding="0" cellspacing="0">
 				<tr height="30">
 					<td width="80">작성자</td>
-					<td width="170"><input type="text" name="m_name" size="10"
-						value="${member.m_name}"></td>
+					<td width="170"><input type="hidden" name="m_id" size="10"
+						value="${m_id }">${m_id }</td>
 					<td width="80">비밀번호(*)</td>
 					<td width="170"><input type="password" name="sh_pw" size="10">
 					</td>
@@ -142,23 +155,31 @@ function writeCheck(){
 				<tr height="30">
 					<td width="80">제목(*)</td>
 					<td align="left" colspan="3"><input type="text"
-						name="sh_title" size="50" value="${share.sh_subject}   ${share.sh_title }" /></td>
+						name="sh_title" size="50" value="${share.sh_title}" /></td>
 				</tr>
 				<tr height="30">
 					<td colspan="4"><textarea rows="10" cols="70"
-							name="sh_content">${share.sh_content }</textarea></td>
+							name="c_id"><c:forEach var="cd" items="${cd_list}">
+					${cd.cd_start} (<fmt:formatDate value="${cd.cd_stime }" pattern="yy/MM/dd HH:mm"/>) ---> ${cd.cd_end } (<fmt:formatDate value="${cd.cd_etime }" pattern="yy/MM/dd HH:mm"/>)
+					
+				</c:forEach></textarea></td>
+				</tr>
+				<tr height="30">
+				<tr height="30">
+					<td colspan="4"><textarea rows="10" cols="70"
+							name="sh_content">${share.sh_content}</textarea></td>
 				</tr>
 				<tr height="30">
 					
-					<td colspan="4" align="center"><input type="button"
-						value="수정하기" onclick="writeCheck();" >
+					<td colspan="4" align="center">
+					<input type="button" value="수정하기" onclick="writeCheck();">
 					&nbsp;&nbsp;
 					<input type="reset" value="취소" /></td>
 				</tr>
 			</table>
 
 		</form>
-	</center>
+	</center> 
 </div>
 	
 	
