@@ -8,7 +8,7 @@ public class Share implements Serializable{
 
 	
 	private int sh_no;
-	private String c_id;
+	private int c_id;
 	private String m_id;
 	private String sh_title;
 	private String sh_content;
@@ -32,12 +32,14 @@ public class Share implements Serializable{
 	}
 
 
-	public String getC_id() {
+
+
+	public int getC_id() {
 		return c_id;
 	}
 
 
-	public void setC_id(String c_id) {
+	public void setC_id(int c_id) {
 		this.c_id = c_id;
 	}
 

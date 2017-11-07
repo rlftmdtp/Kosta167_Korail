@@ -5,7 +5,7 @@
 <%@page import="org.apache.catalina.DistributedManager"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="partner.model.Member"%>
+<%@page import="main.model.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="partner.model.PartnerService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
-encoding//WebContent/jsp/message_jsp/msg_mypage.jsp=UTF-8
+encoding//src/course/model/CourseService.java=UTF-8
+encoding//src/partner/model/PartnerDao.java=UTF-8
 encoding//src/partner/model/PartnerService.java=UTF-8
+encoding//src/review/mapper=UTF-8
 encoding//src/review/mapper/ReviewMapper.java=UTF-8
-encoding//src/review/model/ReviewService.java=UTF-8
+encoding//src/review/model=UTF-8

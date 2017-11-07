@@ -1,18 +1,25 @@
 @CHARSET "UTF-8";
 
 
+#wrap{
+	width:1080px;
+	margin:0 auto;
+}
 
-.header-Wrap{
+.header-wrap{
+	float:left;
 	height : 20%;
 	
 }
 
-.body-Wrap{
-	position: relative;
+.body-wrap{
+	width:1080px;
+	float:left;
 	padding-bottom: 150px;
+	overflow:inherit;
 }
 
 .footer-wrap{
-	position : absolute;
+	float:left;
 	margin-bottom: 0;
 }

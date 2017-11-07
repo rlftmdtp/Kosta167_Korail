@@ -10,10 +10,9 @@ $(function() {
 
 				//삭제
 				initDelete();
-				
-				alert(dateText);
+
 				tripDateStart = new Date(dateText);
-				alert(tripDateStart);
+
 			},
 			minDate : 0, // 이전 날짜 선택불가
 			showOn : "button",
@@ -27,12 +26,7 @@ $(function() {
 		$('.tripLong').click(function() {
 					
 					//여행 날짜를 선택 안했을 경우 종료
-					if (tripDateStart == null) {
-						alert("여행 시작 날짜를 선택하세요");
-						tripLong[0].checked = false;
-						tripLong[1].checked = false;
-						return;
-					}
+					dateCheck();
 
 					var day = parseInt($(this).val()); // val()는 문자열이기 떄문에 Date의 요일과 더하기 위해서 Int로 변형
 					//날짜 더하기
@@ -52,6 +46,12 @@ $(function() {
 
 		$('.startStation').click(
 				function() {
+					
+					// 도착역이 뜨지 않도록 리턴값을 확인한다
+					if(dateCheck()==false){
+						return;
+					}
+					
 					$.ajax({
 						type : 'post',
 						url : 'course_select.jsp',
@@ -156,7 +156,6 @@ $(function() {
 					var issueStations =[];
 					$('input[name="storeLine"]').each(function(i){
 						issueStations.push($(this).val());
-						alert($(this).val());
 					})
 
 					var benefit = document.getElementById('benefit');
@@ -180,17 +179,31 @@ $(function() {
 				});
 		
 		function initDelete(){
-			alert("삭제합니다");
 			//체크박스 해제
 			for (var i = 0; i < tripLong.length; i++) {
 				tripLong[i].checked = false;
 			}
-			
-			// 선택된 요일 삭제
-			$('#startDate').empty() // 자식을 모두 삭제한다
+
+			$('#startDate').empty(); // 자식을 모두 삭제한다
+			$('#arriveStation').empty();
+			$('#startTime').empty();
+			$('#possibleTime').empty();
 		}
 		
-		
+		function dateCheck(){
+			if(tripDateStart == null){
+				alert("여행 날짜를 선택하세요");
+				
+				//체크박스 해제
+				for (var i = 0; i < tripLong.length; i++) {
+					tripLong[i].checked = false;
+				}
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
 });
 
 

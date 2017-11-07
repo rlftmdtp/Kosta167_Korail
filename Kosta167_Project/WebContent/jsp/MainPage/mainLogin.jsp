@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="../../css/Main_css/contents.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/board.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/All.css" type="text/css" />
+<link rel="stylesheet" href="../../css/Main_css/main_login.css?ver=1" type="text/css" />
 
 
 
@@ -34,12 +35,14 @@
 
 </head>
 <body>
+<div id = "wrap">
+	<div class = "header-wrap">
 	<div id="hnn-wrap">
 			<!-- TNB  -->
 			<div id="hnn-tnb">
 				<div class="hnn-inner">
 					<div id="hnn-logo">
-						<a href="MainStart.jsp"><img
+						<a href="mainpage.jsp"><img
 							src="../../images/main_images/logo.jpg" width="161" height="76" /></a>
 					</div>
 
@@ -51,21 +54,10 @@
 							href="../message_jsp/msg_receive.jsp">쪽지함</a></li>
 						<li><a href="Mypage.jsp">마이페이지</a></li>
 					</ul>
-					<!-- 다국어 -->
-					<!-- <div id="hnn-lang">
-					<a class="hnn-btn" href="#">Korean <em></em></a>
-					<ul style="">
-						<li><a href="#">English</a></li>
-						<li><a href="#">China</a></li>
-					</ul>
-				</div> -->
-					<!-- //다국어 -->
+					</div>		
 				</div>
 			</div>
-		</div>
-		<!-- //TNB  -->
 
-		<!--HEADER -->
 		<div id="hnn-header">
 			<div class="hnn-inner">
 				<!-- GNB -->
@@ -78,40 +70,19 @@
 
 							</ul>
 						</div></li>
-					<li class="hnn-gnb2 "><a href="../course_jsp/*****">코스 짜기</a>
-					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_main.jsp">동반자 찾기</a></li>
-					<li class="hnn-gnb4 "><a href="../*********">후기남겨요</a></li>
-					<li class="hnn-gnb5 "><a href="../**********">공유해요</a></li>
+					<li class="hnn-gnb2 "><a href="../course_jsp/course.jsp">코스 짜기</a>
+					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_calendar.jsp">동반자 찾기</a></li>
+					<li class="hnn-gnb4 "><a href="../review_jsp/reviewlist.jsp">후기남겨요</a></li>
+					<li class="hnn-gnb5 "><a href="../share_jsp/shareList.jsp">공유해요</a></li>
 				</ul>
-				<!-- GNB -->
-				<!-- 검색 -->
-				<!-- <script>
-				function search_submit(f) {
-					if (f.q.value.length < 2) {
-						alert("검색어는 두글자 이상 입력하십시오.");
-						f.q.select();
-						f.q.focus();
-						return false;
-					}
-
-					return true;
-				}
-			</script>
-			<div id="header-search">
-				<form name="frmsearch1" action="#"
-					onsubmit="return search_submit(this);">
-					<input type="text" name="q" value="" class="form"
-						placeholder="검색어를 입력하세요." /> <input type="image"
-						src="http://www.e-seje.com/images/ico-search2.gif" alt="검색"
-						class="btn" />
-				</form>
-			</div> -->
+				</div>
 			</div>
 		</div>
+
 	
 
 
-<div class ="body-Wrap">
+<div class ="body-wrap">
 	
 	<div id="container">
          
@@ -123,7 +94,7 @@
              
             <label for="password">Password:</label>
              
-            <p><a href="#">Forgot your password?</a></p>
+            <!-- <p><a href="#">Forgot your password?</a></p> -->
              
             <input type="password" id="pass" name="pass">
              
@@ -145,10 +116,10 @@
 	
 	</div>	
 	
-	<!--푸터값 -->
+<!-- 	<!--푸터값 -->
 
 <div class = "footer-wrap">
-	  <!-- BOARD -->
+	 <!--  BOARD -->
       <div id="hnn-board">
          <div class="hnn-inner clearfix">
             <div class="fl">
@@ -195,10 +166,10 @@
             </div>
          </div>
       </div>
-      <!-- //BOARD -->
+    <!--   //BOARD -->
 
 
-      <!-- SITEMAP  -->
+     <!--  SITEMAP  -->
       <div id="hnn-sitemap">
          <div class="hnn-inner">
             <ul class="sitemap-list clearfix">
@@ -263,7 +234,7 @@
 
          </div>
       </div>
-      <!-- //SITEMAP  -->
+      //SITEMAP 
 
       <script type="text/javascript">
          //VISUAL
@@ -306,7 +277,7 @@
          });
       </script>
       
-      <!-- FOOT -->
+      FOOT
       <div id="hnn-foot">
          <div class="hnn-inner">
             <a href="#" class="gotop">Top</a>
@@ -320,13 +291,13 @@
            
          </div>
       </div>
-      <!-- // FOOT -->
+      // FOOT
    </div>
 
 
    <script src="http://www.e-seje.com/js/sns.js"></script>
 
-	
-	
+	 -->
+	</div>
 </body>
 </html>

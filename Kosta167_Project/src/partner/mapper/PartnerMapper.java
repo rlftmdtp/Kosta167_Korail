@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import partner.model.Member;
+import main.model.Member;
 import partner.model.Search;
 
 public interface PartnerMapper {

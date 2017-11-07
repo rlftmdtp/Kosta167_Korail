@@ -2,7 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	String rec_id = request.getParameter("rec_id");
+	String m_id = (String) session.getAttribute("m_id");
+	
+	if(rec_id==null){
+		rec_id="";
+	}
 
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -33,7 +41,7 @@
       	<tr class="message_table_tr1">
          <td id="table_text">받는이</td>
          <td id = "table_input">
-            <input type="text" name="msg_sendid" size="30">
+            <input type="text" name="msg_sendid" size="30" value="<%=rec_id%>">
          </td>    
       </tr>
          
@@ -45,7 +53,7 @@
       <tr class="message_table_tr3">  
          <td id="table_text">보내는이</td>
          <td id = "table_input">
-            <input type="text" name="m_id" size="30">
+            <input type="hidden" name="m_id" size="30" value="<%=m_id%>"><%=m_id%>
          </td>
       </tr>
       <tr id="btn_tr">

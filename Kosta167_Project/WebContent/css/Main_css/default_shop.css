@@ -50,7 +50,7 @@
 /* aside wrapper */
 #aside {float:left;margin:0 10px 0 0;width:150px}
 
-#container {position:relative;float:left;width:740px;min-height:500px;height:auto !important;height:500px;background:#fff;zoom:1}
+/* #container {position:relative;float:left;width:740px;min-height:500px;height:auto !important;height:500px;background:#fff;zoom:1} */
 #container:after {display:block;visibility:hidden;clear:both;content:""}
 
 /* 텍스트 크기 조절 */

@@ -41,7 +41,7 @@ public class CourseService {
 	public int insertCourse(String m_id){
 		Course course = new Course();
 		
-		String c_id = dao.selectC_id() + 1 + "";
+		int c_id = dao.selectC_id() + 1;
 
 		course.setC_id(c_id); // 데이터베이스에 존재하는 데이터 최대치에 + 1
 		course.setM_id(m_id);
@@ -49,7 +49,7 @@ public class CourseService {
 		int re = dao.insertCourse(course);
 		
 		if(re>0){ // 코스 저장에 성공했을 경우 방금 생성된 해당 코스 id를 반환
-			return Integer.parseInt(c_id);
+			return c_id;
 		}
 		else{
 			return -1;
@@ -63,7 +63,7 @@ public class CourseService {
 	public int insertCourseDetail(CourseDetail courseDetail){
 
 		System.out.println(dao.selectCd_id());
-		courseDetail.setCd_id(dao.selectCd_id()+ 1 + "");
+		courseDetail.setCd_id(dao.selectCd_id()+ 1);
 
 		return dao.insertCourseDetail(courseDetail);
 	}

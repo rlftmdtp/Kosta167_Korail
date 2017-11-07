@@ -12,7 +12,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import review.model.Reply;
 import review.model.ListModel;
-import review.model.Search;
+import review.model.Re_Search;
 import review.model.Review;
 import review.model.ImageUtil;
 
@@ -46,6 +46,7 @@ public class ReviewService {
 				new DefaultFileRenamePolicy());
 		// new DefaultFileRenamePolicy() �젙梨�
 		// �뙆�씪 �씠由꾩씠 寃뱀튌 寃쎌슦 �뮘�뿉 (�닽�옄)瑜� 諛쏆쓬
+		int r_no = dao.selectR_no()+1;
 		
 		review.setM_id(multi.getParameter("m_id"));
 		review.setR_content(multi.getParameter("r_content"));
@@ -53,7 +54,7 @@ public class ReviewService {
 		review.setR_pw(multi.getParameter("r_pw"));
 		review.setR_title(multi.getParameter("r_title"));
 		
-		review.setR_no(Integer.parseInt(multi.getParameter("r_no")));
+		review.setR_no(r_no);
 
 		// �뙆�씪 �뾽濡쒕뱶 �떆
 		// api�궗�슜 => getFilesystemName �뙆�씪 �씠由꾩쓣 媛��졇�샂
@@ -91,7 +92,7 @@ public class ReviewService {
 	}
 
 	 public ListModel listReviewService(HttpServletRequest request , int requstPage) {
-		Search search = new Search();
+		Re_Search search = new Re_Search();
 		
 		HttpSession session = request.getSession();
 		
@@ -107,9 +108,9 @@ public class ReviewService {
 			search.setSearchKey("%" + request.getParameter("searchKey") + "%");
 			session.setAttribute("search", search);
 			
-		}else if ((Search) session.getAttribute("search") != null){
+		}else if ((Re_Search) session.getAttribute("search") != null){
 			//寃��깋 �썑 �럹�씠吏뺤쓣 �겢由� �떆 session�씠 �쑀吏��릺�뼱�빞 �븳�떎.
-			search = (Search) session.getAttribute("search");
+			search = (Re_Search) session.getAttribute("search");
 		}
 		
 		

@@ -8,7 +8,7 @@
 	
 	
 	MessageService service = MessageService.getInstance();
-	//service.deleteMessage(msg_no);
+	service.deleteMessage(msg_no);
 	
 	response.sendRedirect("msg_receive.jsp");
 	

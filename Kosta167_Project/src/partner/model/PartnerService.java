@@ -9,6 +9,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import main.model.Member;
+
 public class PartnerService {
 	 private static PartnerService service = new PartnerService();
 	 private static PartnerDao dao;

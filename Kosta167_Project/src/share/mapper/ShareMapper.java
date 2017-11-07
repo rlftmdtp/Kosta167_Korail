@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 
-import share.model.Member;
+import course.model.CourseDetail;
+import main.model.Member;
 import share.model.Share;
 import share.model.ShareReply;
 import share.model.ShareSearch;
@@ -35,4 +36,6 @@ public interface ShareMapper {
 	public List<ShareReply> listshareReply(int sh_no);
 	
 	public int deleteReply (int sh_no);
+	
+	public List<CourseDetail> viewCourseDetail(int c_id);
 }

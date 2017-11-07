@@ -1,4 +1,5 @@
- <%@page import="org.apache.catalina.Service"%>
+<%@page import="share.model.Share"%>
+<%@page import="org.apache.catalina.Service"%>
 <%@page import="share.model.ShareService"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,9 +7,26 @@
     <% 
     request.setCharacterEncoding("utf-8");
     %>
-    <jsp:useBean id="share" class="share.model.Share"></jsp:useBean>
-    <jsp:setProperty property="*" name="share"/>
+<%--     <jsp:useBean id="share" class="share.model.Share"></jsp:useBean>
+    <jsp:setProperty property="*" name="share"/> --%>
  <%
+ 	int c_id = Integer.parseInt(request.getParameter("c_id"));
+ 	System.out.println("aaaaaaaaaaaaaaa"+c_id);
+ 	String m_id = (String) session.getAttribute("m_id");
+ 	
+ 	String sh_content = request.getParameter("sh_content");
+ 	String sh_pw = request.getParameter("sh_pw");
+ 	String sh_title = request.getParameter("sh_title");
+ 	String sh_subject = request.getParameter("sh_subject");
+ 	
+ 	Share share = new Share();
+ 	
+ 	share.setSh_subject(sh_subject);
+ 	share.setC_id(c_id);
+ 	share.setM_id(m_id);
+ 	share.setSh_content(sh_content);
+ 	share.setSh_pw(sh_pw);
+ 	share.setSh_title(sh_title);
  	
  	System.out.println(share);
  	ShareService service = ShareService.getInstance();
@@ -22,7 +40,6 @@
 		response.sendRedirect("shareForm.jsp");
 	} 
 	%>    
- 		
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

@@ -30,6 +30,17 @@
 <link rel="stylesheet" href="../../css/Main_css/contents.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/board.css" type="text/css" />
 <link rel="stylesheet" href="../../css/Main_css/All.css" type="text/css" />
+<link rel="stylesheet" href="../../css/message_css/Message_detail.css?ver=1" type="text/css" />
+
+
+<script type="text/javascript" src="../../javascript/Main_script/jquery.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery-migrate.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery.easing.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../../javascript/Main_script/base.js"></script>
+<script src="../../javascript/Main_script/jquery.shop.menu.js"></script>
+<script src="../../javascript/Main_script/common.js"></script>
+<script src="../../javascript/Main_script/wrest.js"></script>
 
 
 <script type="text/javascript">
@@ -51,78 +62,47 @@ function show(obj){
 </script>
 </head>
 <body>       
+	<div id = "wrap">
+	<div class = "header-wrap">
 	<div id="hnn-wrap">
 			<!-- TNB  -->
 			<div id="hnn-tnb">
 				<div class="hnn-inner">
 					<div id="hnn-logo">
-						<a href="MainStart.jsp"><img
+						<a href="../MainPage/mainpage.jsp"><img
 							src="../../images/main_images/logo.jpg" width="161" height="76" /></a>
 					</div>
 
 					<ul id="hnn-log">
-						<li><a href="mainpage.jsp">홈</a></li>
-						<li><a href="mainLogin.jsp">로그인</a><span></span></li>
+						<li><a href="../MainPage/mainpage.jsp">홈</a></li>
+						<li><a href="../MainPage/mainLogin.jsp">로그인</a><span></span></li>
 						<li><a href="#">회원가입</a><span></span></li>
 						<li><a
-							href="../message_jsp/msg_receive.jsp">쪽지함</a></li>
-						<li><a href="Mypage.jsp">마이페이지</a></li>
+							href="msg_receive.jsp">쪽지함</a></li>
+						<li><a href="../MainPage/Mypage.jsp">마이페이지</a></li>
 					</ul>
-					<!-- 다국어 -->
-					<!-- <div id="hnn-lang">
-					<a class="hnn-btn" href="#">Korean <em></em></a>
-					<ul style="">
-						<li><a href="#">English</a></li>
-						<li><a href="#">China</a></li>
-					</ul>
-				</div> -->
-					<!-- //다국어 -->
+					</div>		
 				</div>
 			</div>
-		</div>
-		<!-- //TNB  -->
 
-		<!--HEADER -->
 		<div id="hnn-header">
 			<div class="hnn-inner">
 				<!-- GNB -->
 				<ul id="hnn-gnb">
-					<li class="hnn-gnb1 "><a href="RailoInfo.jsp">Star Rail</a>
+					<li class="hnn-gnb1 "><a href="../MainPage/RailoInfo.jsp">Star Rail</a>
 						<div>
 							<ul class="hnn-snb1">
-								<li><a href="RailoInfo.jsp">내일로란</a></li>
-								<li><a href="RailoGift.jsp">내일로 혜택</a></li>
+								<li><a href="../MainPage/RailoInfo.jsp">내일로란</a></li>
+								<li><a href="../MainPage/RailoGift.jsp">내일로 혜택</a></li>
 
 							</ul>
 						</div></li>
-					<li class="hnn-gnb2 "><a href="../course_jsp/*****">코스 짜기</a>
-					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_main.jsp">동반자 찾기</a></li>
-					<li class="hnn-gnb4 "><a href="../*********">후기남겨요</a></li>
-					<li class="hnn-gnb5 "><a href="../**********">공유해요</a></li>
+					<li class="hnn-gnb2 "><a href="../course_jsp/course.jsp">코스 짜기</a>
+					<li class="hnn-gnb3 "><a href="../partner_jsp/Partner_calendar.jsp">동반자 찾기</a></li>
+					<li class="hnn-gnb4 "><a href="../review_jsp/reviewlist.jsp">후기남겨요</a></li>
+					<li class="hnn-gnb5 "><a href="../share_jsp/shareList.jsp">공유해요</a></li>
 				</ul>
-				<!-- GNB -->
-				<!-- 검색 -->
-				<!-- <script>
-				function search_submit(f) {
-					if (f.q.value.length < 2) {
-						alert("검색어는 두글자 이상 입력하십시오.");
-						f.q.select();
-						f.q.focus();
-						return false;
-					}
-
-					return true;
-				}
-			</script>
-			<div id="header-search">
-				<form name="frmsearch1" action="#"
-					onsubmit="return search_submit(this);">
-					<input type="text" name="q" value="" class="form"
-						placeholder="검색어를 입력하세요." /> <input type="image"
-						src="http://www.e-seje.com/images/ico-search2.gif" alt="검색"
-						class="btn" />
-				</form>
-			</div> -->
+				</div>
 			</div>
 		</div>
 
@@ -130,28 +110,30 @@ function show(obj){
   
 
 	<div class = "body-wrap">
+	<div class="msgtable">
 	<table class="type11">
     <tr>
-        <th>보낸 사람</th>
-        <td> ${message.m_id }</td>
+        <th class="tableHead">보낸 사람</th>
+        <td class="dataTd"> ${message.m_id }</td>
     </tr>
 
     <tr>
-        <th>작성일</th>
-        <td><fmt:formatDate value="${message.msg_date }" pattern="yyyy-MM-dd / HH:mm"/></td>
+        <th class="tableHead">작성일</th>
+        <td class="dataTd"><fmt:formatDate value="${message.msg_date }" pattern="yyyy-MM-dd / HH:mm"/></td>
     </tr>
     <tr>
-        <th>내용</th>
-        <td>${message.msg_content }</td>
+        <th class="tableHead">내용</th>
+        <td class="dataTd">${message.msg_content }</td>
     </tr>
     <tr>
-        <td><input type="button" value="뒤로가기" onclick="Message_history()" /> </td> 
-        <td><input type="button" value="삭제" onclick="Message_delete()" /></td>
+        <td class="dataTd"><input type="button" value="뒤로가기" onclick="Message_history()" /> </td> 
+        <td class="dataTd"><input type="button" value="삭제" onclick="Message_delete()" /></td>
     </tr>
 </table>
 </div>
+</div>
 
-	<!--푸터값 -->
+<!--푸터값 -->
 
 <div class = "footer-wrap">
 	  <!-- BOARD -->
@@ -332,6 +314,9 @@ function show(obj){
 
    <script src="http://www.e-seje.com/js/sns.js"></script>
 
+
+
+</div>
 
 </body>
 </html>
